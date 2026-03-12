@@ -1,0 +1,52 @@
+@use "./../../foundation/_mixin.scss" as mx;
+@include mx.breakpoint(tablet) {
+}
+@include mx.breakpoint(sp) {
+}
+
+.c-button {
+  &__link {
+    position: relative;
+    display: inline-block;
+    padding: 14px 80px 14px 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: .05em;
+    text-decoration: none;
+    color: var(--text);
+    transition: .3s;
+    @include mx.hover {
+      &::before {
+        width: 52px;
+      }
+      &::after {
+        right: 20px;
+      }
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      width: 48px;
+      aspect-ratio: 1;
+      border: 1px solid #333;
+      border-radius: 50%;
+      transition: .3s;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 24px;
+      transform: translateY(-50%) skewX(50deg);
+      width: 48px;
+      height: 6px;
+      border-bottom: 1px solid #333;
+      border-right: 1px solid #333;
+      transition: .3s;
+    }
+  }
+}

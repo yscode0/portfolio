@@ -1,0 +1,55 @@
+@use "./../foundation/mixin" as mx;
+@include mx.breakpoint(tablet) {
+}
+@include mx.breakpoint(sp) {
+}
+
+.l-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 16px 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform .3s;
+  &.is-hidden {
+    transform: translateY(-100%);
+  }
+  &__menu {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  &__item-link {
+    position: relative;
+     color: var(--text);
+     text-decoration: none;
+     font-size: 1rem;
+     font-weight: 500;
+     letter-spacing: .05em;
+     text-transform: uppercase;
+     opacity: .7;
+     transition: opacity .3s;
+     @include mx.hover {
+      opacity: 1;
+      &::before {
+        transform: scaleX(1);
+      }
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--color-gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .3s;
+    }
+  }
+}

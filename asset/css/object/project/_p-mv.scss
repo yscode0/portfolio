@@ -1,0 +1,58 @@
+@use "./../../foundation/_mixin.scss" as mx;
+
+.p-mv {
+  min-height: 90svh;
+  display: flex;
+  align-items: center;
+  padding: 80px 64px 0;
+  &__content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  &__title {
+    margin: 0;
+    font-size: clamp(72px, 11vw, 180px);
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: .12em;
+    text-transform: capitalize;
+  }
+  &__title-label {
+    display: block;
+    padding-bottom: 12px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: .4em;
+    color: var(--text-accent);
+  }
+  &__text {
+    position: relative;
+    margin: 24px 0 0 0;
+    padding: 0 0 0 104px;
+    font-size: 1rem;
+    line-height: 1.7;
+    letter-spacing: .05em;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 72px;
+      height: 1px;
+      background-color: var(--color-gold);
+      top: 50%;
+      left: 0;
+    }
+  }
+  &__cta {
+    margin: 48px 0 0 auto;
+    .c-button {
+      margin-top: 10px;
+    }
+  }
+  &__cta-text {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.7;
+    letter-spacing: .05em;
+  }
+}

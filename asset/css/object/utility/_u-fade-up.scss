@@ -1,0 +1,13 @@
+@use "../../foundation/mixin" as mx;
+
+.u-fade-up {
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateY(10px);
+  transition: opacity 1s ease, filter 1s ease, transform 1s ease;
+  &.is-show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}

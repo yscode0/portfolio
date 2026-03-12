@@ -1,0 +1,9 @@
+@use "./../../foundation/_mixin.scss" as mx;
+@include mx.breakpoint(tablet) {
+}
+@include mx.breakpoint(sp) {
+}
+
+.c-accent {
+  color: var(--text-accent);
+}

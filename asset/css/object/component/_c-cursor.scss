@@ -1,0 +1,40 @@
+@use "./../../foundation/_mixin.scss" as mx;
+
+.c-cursor {
+  position: fixed;
+  width: 8px;
+  aspect-ratio: 1;
+  background-color: var(--color-gold);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width .3s, background-color .3s;
+  
+  &__ring {
+    position: fixed;
+    width: 36px;
+    aspect-ratio: 1;
+    border: 1px solid rgba(207,162,82,0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: width .3s , border-color .3s;
+  }
+}
+
+body.is-hove .c-cursor {
+  width: 0;
+}
+body.is-hove .c-cursor__ring {
+  width: 64px;
+  border-color: var(--color-gold);
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .c-cursor,
+  .c-cursor__ring {
+    display: none;
+  }
+}
