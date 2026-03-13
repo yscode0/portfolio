@@ -1,5 +1,129 @@
 @use "./../../foundation/_mixin.scss" as mx;
 
 .c-works {
-  
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  &__card {
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: var(--color-cream);
+    height: 100%;
+  }
+  &__link {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    height: 100%;
+    @include mx.hover {
+      .c-works__arrow {
+        opacity: 1;
+      }
+      .c-works__img {
+        &::before {
+          opacity: 1;
+        }
+      }
+      img {
+        transform: scale(1.1);
+      }
+    }
+  }
+  &__arrow {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 32px;
+    aspect-ratio: 1;
+    border: 1px solid var(--color-gold);
+    border-radius: 50%;
+    opacity: 0;
+    transition: .3s;
+    z-index: 2;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 16px;
+      transform: translateY(-50%) skewX(50deg);
+      width: 32px;
+      height: 4px;
+      border-bottom: 1px solid var(--color-gold);
+      border-right: 1px solid var(--color-gold);
+      transition: .3s;
+    }
+  }
+  &__img {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    &::before {
+      content: "VIEW DETAIL";
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.125rem;
+      font-weight: 500;
+      letter-spacing: .2em;
+      color: var(--text-light);
+      background-color: rgba(0, 0, 0, 0.7);
+      opacity: 0;
+      transition: .3s;
+      z-index: 1;
+    }
+    img {
+      width: 100%;
+      aspect-ratio: 413/239;
+      transition: .3s;
+    }
+  }
+  &__title {
+    margin: 24px 0 0 0;
+    padding: 0 32px;
+    font-size: 1.25rem;
+    letter-spacing: .05em;
+    color: var(--text);
+  }
+  &__text {
+    margin: 16px 0 0 0;
+    padding: 0 32px;
+    font-size: 1rem;
+    letter-spacing: .05em;
+    color: var(--text);
+    flex-grow: 1;
+  }
+  &__tag-list {
+    margin: 16px 0 0 0;
+    padding: 0 32px 32px;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  &__tag-item {
+    position: relative;
+    font-size: .87rem;
+    letter-spacing: 0;
+    color: var(--text);
+    text-transform: capitalize;
+    &::after {
+      content: "/";
+      position: absolute;
+      top: 0;
+      right: -15px;
+    }
+    &:last-child {
+      &::after {
+        display: none;
+      }
+    }
+  }
 }

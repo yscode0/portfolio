@@ -4,7 +4,7 @@
 
   // words
   &__works {
-    padding: 80px 0;
+    padding: 120px 0;
     background-color: var(--color-dark);
     .c-title {
       color: var(--text-light);
@@ -13,5 +13,12 @@
   &__works-read {
     color: var(--text-light);
     margin-top: 16px;
+  }
+  &__works-content {
+    margin-top: 72px;
+    .c-button {
+      margin-top: 40px;
+      text-align: right;
+    }
   }
 }

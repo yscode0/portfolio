@@ -7,4 +7,7 @@
   letter-spacing: 1.7;
   letter-spacing: .05em;
   color: var(--text);
+  @include mx.breakpoint(sp) {
+    font-size: 15px;
+  }
 }

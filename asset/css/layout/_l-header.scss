@@ -14,6 +14,15 @@
   align-items: center;
   justify-content: space-between;
   transition: transform .3s;
+  z-index: 10;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(255, 253, 243, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
   &.is-hidden {
     transform: translateY(-100%);
   }
