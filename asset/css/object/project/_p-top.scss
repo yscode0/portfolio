@@ -1,1 +1,17 @@
 @use "./../../foundation/_mixin.scss" as mx;
+
+.p-top {
+
+  // words
+  &__works {
+    padding: 80px 0;
+    background-color: var(--color-dark);
+    .c-title {
+      color: var(--text-light);
+    }
+  }
+  &__works-read {
+    color: var(--text-light);
+    margin-top: 16px;
+  }
+}

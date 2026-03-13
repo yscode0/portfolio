@@ -41,6 +41,16 @@
   cursor: none !important;
 }
 
+// ドラッグハイライトカスタム
+::selection {
+  background-color: var(--color-gold);
+  color: var(--text);
+}
+::-moz-selection {
+  background-color: var(--color-gold);
+  color: var(--text);
+}
+
 // fontはここに集約
 body {
   font-family: "Noto Sans JP", sans-serif;

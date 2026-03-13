@@ -14,7 +14,7 @@
 @use "object/component/c-text";
 @use "object/component/c-button";
 @use "object/component/c-cursor";
-@use "object/component/c-accent";
+@use "object/component/c-works";
 
 //project
 @use "object/project/p-mv";
@@ -22,3 +22,4 @@
 
 //utility
 @use "object/utility/u-fade-up";
+@use "object/utility/u-accent";
