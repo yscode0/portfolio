@@ -1,9 +1,0 @@
-@use "./../../foundation/_mixin.scss" as mx;
-@include mx.breakpoint(tablet) {
-}
-@include mx.breakpoint(sp) {
-}
-
-.c-slider {
-  overflow: hidden;
-}
