@@ -1,0 +1,60 @@
+@use "./../../foundation/_mixin.scss" as mx;
+
+.c-cta {
+  background-image: url(../images/contact-bg.webp);
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: multiply;
+  background-color: var(--color-dark);
+  padding: 120px 0;
+  margin-bottom: 80px;
+  &__content {
+    background-color: var(--color-cream);
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 56px;
+    .c-text {
+      & + .c-text {
+        margin-top: 16px;
+      }
+    }
+  }
+  &__btn {
+    text-align: center;
+    margin-top: 24px;
+  }
+  &__btn-link {
+    position: relative;
+    display: inline-block;
+    font-size: 2rem;
+    line-height: 1;
+    letter-spacing: .05em;
+    color: var(--text-light);
+    text-decoration: none;
+    background-color: var(--color-gold);
+    border: 2px solid transparent;
+    padding: 8px 40px;
+    transition: 0.3s;
+    z-index: 0;
+    &:hover {
+      border: 2px solid var(--color-gold);
+      color: var(--text-accent);
+      &::before {
+        transform: scaleX(1);
+      }
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--color-cream);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+      z-index: -1;
+    }
+  }
+}

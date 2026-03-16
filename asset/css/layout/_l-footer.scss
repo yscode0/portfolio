@@ -3,3 +3,61 @@
 }
 @include mx.breakpoint(sp) {
 }
+
+.l-footer {
+  padding: 180px 0 0;
+  &__content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-bottom: 80px;
+  }
+  &__menu {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  &__item-link {
+    position: relative;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+    &:hover {
+      opacity: 1;
+      &::before {
+        transform: scaleX(1);
+      }
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--color-gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+  }
+  &__copyright {
+    background-color: var(--color-dark);
+    padding: 24px 20px;
+  }
+  &__copyright-text {
+    margin: 0;
+    font-size: .75rem;
+    line-height: 1;
+    letter-spacing: .05em;
+    color: var(--text-light);
+    opacity: .7;
+    text-align: center;
+  }
+}

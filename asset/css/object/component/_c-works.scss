@@ -100,17 +100,34 @@
     color: var(--text);
     flex-grow: 1;
   }
+  &__meta {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    align-items: start;
+    gap: 8px 0;
+    padding: 32px;
+  }
+  &__term {
+    font-size: .875rem;
+    font-weight: 500;
+    letter-spacing: 0;
+    color: var(--text);
+    text-transform: capitalize;
+  }
+  &__desc {
+    margin: 0;
+  }
   &__tag-list {
-    margin: 16px 0 0 0;
-    padding: 0 32px 32px;
+    margin: 0;
+    padding: 0;
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    gap: 24px;
+    gap: 0 24px;
   }
   &__tag-item {
     position: relative;
-    font-size: .87rem;
+    font-size: .875rem;
     letter-spacing: 0;
     color: var(--text);
     text-transform: capitalize;

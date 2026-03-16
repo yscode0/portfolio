@@ -4,9 +4,10 @@
   min-height: 90svh;
   display: flex;
   align-items: center;
-  padding: 80px 64px 40px;
+  padding: 96px 64px 32px;
   &__content {
     width: 100%;
+    min-height: calc(90svh - 128px);
     display: flex;
     flex-direction: column;
   }
@@ -17,6 +18,9 @@
     line-height: 1;
     letter-spacing: .12em;
     text-transform: capitalize;
+    opacity: 0;
+    transform: translate(-50px, 0);
+    animation: appear 1s .5s ease-in-out forwards;
   }
   &__title-label {
     display: block;
@@ -29,10 +33,13 @@
   &__text {
     position: relative;
     margin: 24px 0 0 0;
-    padding: 0 0 0 104px;
+    padding: 0 0 48px 104px;
     font-size: 1rem;
     line-height: 1.7;
     letter-spacing: .05em;
+    opacity: 0;
+    transform: translate(-50px, 0);
+    animation: appear 1s .9s ease-in-out forwards;
     &::before {
       content: "";
       position: absolute;
@@ -44,7 +51,10 @@
     }
   }
   &__cta {
-    margin: 48px 0 0 auto;
+    margin: auto 0 0 auto;
+    opacity: 0;
+    transform: translate( 0, 50px);
+    animation: appear 1s 1.2s ease-in-out forwards;
     .c-button {
       margin-top: 10px;
     }
@@ -54,5 +64,12 @@
     font-size: 1rem;
     line-height: 1.7;
     letter-spacing: .05em;
+  }
+}
+
+@keyframes appear {
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
   }
 }
