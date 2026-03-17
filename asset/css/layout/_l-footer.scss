@@ -5,12 +5,18 @@
 }
 
 .l-footer {
-  padding: 180px 0 0;
+  padding: 120px 0 0;
+  @include mx.breakpoint(tablet) {
+    padding: 80px 0 0;
+  }
   &__content {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     padding-bottom: 80px;
+    @include mx.breakpoint(tablet) {
+      padding-bottom: 56px;
+    }
   }
   &__menu {
     margin: 0;

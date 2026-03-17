@@ -16,12 +16,21 @@
     text-decoration: none;
     color: var(--text);
     transition: .3s;
+    @include mx.breakpoint(sp) {
+      font-size: 15px;
+    }
     @include mx.hover {
       &::before {
         width: 52px;
+        @include mx.breakpoint(sp) {
+          width: 44px;
+        }
       }
       &::after {
         right: 20px;
+        @include mx.breakpoint(sp) {
+          right: 16px;
+        }
       }
     }
     &::before {
@@ -35,6 +44,9 @@
       border: 1px solid #333;
       border-radius: 50%;
       transition: .3s;
+      @include mx.breakpoint(sp) {
+        width: 40px;
+      }
     }
     &::after {
       content: "";
@@ -47,6 +59,10 @@
       border-bottom: 1px solid #333;
       border-right: 1px solid #333;
       transition: .3s;
+      @include mx.breakpoint(sp) {
+        width: 40px;
+        right: 20px;
+      }
     }
   }
   &__link--light {

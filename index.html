@@ -32,11 +32,13 @@
 
   <!-- ヘッダー -->
   <header class="l-header js-header">
+    <!-- ヘッダーロゴ -->
     <div class="c-site-title">
       <a class="c-site-title__link dm-mono" href="index.html">
         yosh<span class="u-accent">i</span> code
       </a>
     </div>
+    <!-- ヘッダーナビ -->
     <nav class="l-header__nav">
       <ul class="l-header__menu">
         <li class="l-header__item dm-mono">
@@ -51,12 +53,51 @@
         <li class="l-header__item dm-mono">
           <a class="l-header__item-link" href="service.html">service</a>
         </li>
-        <li class="l-header__item l-header__item-cta dm-mono">
+        <li class="l-header__item dm-mono">
           <a class="l-header__item-link" href="contact.html">contact</a>
         </li>
       </ul>
     </nav>
-    
+    <!-- バーガーボタン -->
+    <button class="l-header__burger js-menu-toggle">
+      <span class="l-header__burger-bar"></span>
+      <span class="l-header__burger-bar"></span>
+    </button>
+
+    <div class="l-header__burger-content js-menu">
+      <div class="l-header__burger-header">
+        <div class="c-site-title">
+          <a class="c-site-title__link dm-mono" href="index.html">
+            yosh<span class="u-accent">i</span> code
+          </a>
+        </div>
+        <button class="l-header__burger js-menu-toggle">
+          <span class="l-header__burger-bar"></span>
+          <span class="l-header__burger-bar"></span>
+        </button>
+      </div>
+      <div class="l-header__burger-body">
+        <nav class="l-header__burger-nav">
+          <ul class="l-header__burger-menu">
+            <li class="l-header__burger-item dm-mono">
+              <a class="l-header__burger-item-link" href="index.html">top</a>
+            </li>
+            <li class="l-header__burger-item dm-mono">
+              <a class="l-header__burger-item-link" href="works.html">works</a>
+            </li>
+            <li class="l-header__burger-item dm-mono">
+              <a class="l-header__burger-item-link" href="about.html">about</a>
+            </li>
+            <li class="l-header__burger-item dm-mono">
+              <a class="l-header__burger-item-link" href="service.html">service</a>
+            </li>
+            <li class="l-header__burger-item dm-mono">
+              <a class="l-header__burger-item-link" href="contact.html">contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
   </header>
 
   <main class="l-main">

@@ -6,6 +6,9 @@
   &__works {
     padding: 120px 0;
     background-color: var(--color-dark);
+    @include mx.breakpoint(tablet) {
+      padding: 80px 0;
+    }
     .c-title {
       color: var(--text-light);
       &__line {
@@ -19,6 +22,9 @@
   }
   &__works-content {
     margin-top: 72px;
+    @include mx.breakpoint(tablet) {
+      margin-top: 56px;
+    }
     .c-button {
       margin-top: 40px;
       text-align: right;
@@ -28,6 +34,9 @@
   // about
   &__about {
     padding: 120px 0;
+    @include mx.breakpoint(tablet) {
+      padding: 80px 0;
+    }
   }
   &__about-content {
     max-width: 1080px;
@@ -35,11 +44,24 @@
     display: grid;
     grid-template-columns: 320px 1fr;
     gap: 72px;
+    @include mx.breakpoint(note) {
+      gap: 40px;
+    }
+    @include mx.breakpoint(tablet) {
+      grid-template-columns: 220px 1fr;
+      margin: 56px auto 0;
+    }
+    @include mx.breakpoint(sp) {
+      grid-template-columns: 1fr;
+    }
   }
   &__about-img {
     margin: 0;
     width: 100%;
     max-width: 320px;
+    @include mx.breakpoint(sp) {
+      margin: 0 auto;
+    }
     img {
       border-radius: 50%;
       width: 100%;
@@ -53,6 +75,7 @@
     margin: 0;
     font-size: 1.25rem;
     font-weight: 500;
+    line-height: 1.2;
     letter-spacing: .05em;
     text-align: center;
   }
@@ -70,6 +93,10 @@
     display: flex;
     flex-wrap: wrap;
     gap: 16px 24px;
+    @include mx.breakpoint(sp) {
+      margin: 32px 0 0 0;
+      gap: 8px 20px;
+    }
   }
   &__about-skill-item {
     position: relative;
@@ -109,6 +136,9 @@
     .c-button {
       margin-top: 40px;
       text-align: right;
+      @include mx.breakpoint(sp) {
+        margin-top: 24px;
+      }
     }
   }
 
@@ -116,6 +146,9 @@
   &__service {
     padding: 120px 0;
     background-color: var(--color-dark);
+    @include mx.breakpoint(tablet) {
+      padding: 80px 0;
+    }
     .c-title {
       color: var(--text-light);
       &__line {
@@ -125,9 +158,15 @@
   }
   &__service-content {
     margin-top: 72px;
+    @include mx.breakpoint(tablet) {
+      margin-top: 56px;
+    }
     .c-button {
       margin-top: 40px;
       text-align: right;
+      @include mx.breakpoint(sp) {
+        margin-top: 24px;
+      }
     }
   }
   &__service-list {
@@ -137,17 +176,37 @@
   }
   &__service-item {
     border-bottom: 1px solid rgba(255, 253, 243, 0.2);
+    &:first-child {
+      .p-top__service-link {
+        padding: 0 0 40px;
+        @include mx.hover {
+          padding: 0 20px 40px;
+          @include mx.breakpoint(sp) {
+            padding: 0 16px 24px;
+          }
+        }
+        @include mx.breakpoint(sp) {
+          padding: 0 0 24px;
+        }
+      }
+    }
   }
   &__service-link {
     position: relative;
     display: grid;
     grid-template-columns: 60px 1fr 270px;
     align-items: center;
-    gap: 20px;
+    gap: 8px 20px;
     padding: 40px 0;
     text-decoration: none;
     transition: .3s;
     z-index: 0;
+    @include mx.breakpoint(sp) {
+      grid-template-columns: 24px 1fr;
+      grid-template-rows: repeat(2, 1fr);
+      padding: 24px 0;
+      gap: 8px 16px;
+    }
     &::before {
       content: "";
       position: absolute;
@@ -161,8 +220,11 @@
       transition: transform 0.3s;
       z-index: -1;
     }
-    &:hover {
+    @include mx.hover {
       padding: 40px 20px;
+      @include mx.breakpoint(sp) {
+        padding: 24px 16px;
+      }
       &::before {
         transform: scaleX(1);
       }
@@ -172,6 +234,12 @@
         &::before {
           right: 20px;
         }
+        @include mx.breakpoint(sp) {
+          width: 44px;
+          &::before {
+            right: 16px;
+          }
+        }
       }
     }
   }
@@ -179,6 +247,9 @@
     font-size: .875rem;
     letter-spacing: .05em;
     color: var(--text-accent);
+    @include mx.breakpoint(sp) {
+      grid-area: 1 / 1 / 3 / 2;
+    }
   }
   &__service-title {
     margin: 0;
@@ -186,10 +257,16 @@
     font-weight: 400;
     letter-spacing: 0;
     color: var(--text-light);
+    @include mx.breakpoint(sp) {
+      grid-area: 1 / 2 / 2 / 3;
+    }
   }
   &__service-text {
     color: var(--text-light);
     opacity: .7;
+    @include mx.breakpoint(sp) {
+      grid-area: 2 / 2 / 3 / 3;
+    }
   }
   &__service-arrow {
     position: absolute;
@@ -203,6 +280,9 @@
     opacity: .4;
     transition: .3s;
     z-index: -1;
+    @include mx.breakpoint(sp) {
+      width: 40px;
+    }
     &::before {
       content: "";
       position: absolute;
@@ -214,14 +294,9 @@
       border-bottom: 1px solid var(--color-gold);
       border-right: 1px solid var(--color-gold);
       transition: .3s;
+      @include mx.breakpoint(sp) {
+        width: 40px;
+      }
     }
-  }
-
-  // contact
-  &__contact {
-    padding: 120px 0;
-  }
-  &__contact-content {
-    margin: 72px 0 0 0;
   }
 }

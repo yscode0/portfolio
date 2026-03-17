@@ -3,22 +3,37 @@
 .c-works {
   &__list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
     list-style: none;
     margin: 0;
     padding: 0;
+    @include mx.breakpoint(pc) {
+      gap: 40px 24px;
+    }
+    @include mx.breakpoint(sp) {
+      grid-template-columns: 1fr;
+    }
+  }
+  &__item {
+    display: grid;
+    grid-row: span 4;
+    grid-template-rows: subgrid;
   }
   &__card {
     overflow: hidden;
     border-radius: 8px;
     background-color: var(--color-cream);
-    height: 100%;
+    display: grid;
+    grid-row: span 4;
+    grid-template-rows: subgrid;
   }
   &__link {
     position: relative;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-row: span 4;
+    grid-template-rows: subgrid;
+    gap: 0;
     text-decoration: none;
     height: 100%;
     @include mx.hover {
@@ -91,6 +106,12 @@
     font-size: 1.25rem;
     letter-spacing: .05em;
     color: var(--text);
+    @include mx.breakpoint(pc) {
+      padding: 0 20px;
+    }
+    @include mx.breakpoint(sp) {
+      font-size: 1.125rem;
+    }
   }
   &__text {
     margin: 16px 0 0 0;
@@ -98,14 +119,25 @@
     font-size: 1rem;
     letter-spacing: .05em;
     color: var(--text);
-    flex-grow: 1;
+    @include mx.breakpoint(pc) {
+      padding: 0 20px;
+    }
+    @include mx.breakpoint(sp) {
+      font-size: 15px;
+    }
   }
   &__meta {
     display: grid;
     grid-template-columns: 60px 1fr;
     align-items: start;
     gap: 8px 0;
-    padding: 32px;
+    margin-top: 32px;
+    padding: 0 32px 32px;
+    @include mx.breakpoint(pc) {
+      grid-template-columns: 50px 1fr;
+      margin-top: 28px;
+      padding: 0 20px 28px;
+    }
   }
   &__term {
     font-size: .875rem;

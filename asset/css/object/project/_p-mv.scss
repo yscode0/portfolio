@@ -5,6 +5,15 @@
   display: flex;
   align-items: center;
   padding: 96px 64px 32px;
+  @include mx.breakpoint(note) {
+    padding: 96px 40px 32px;
+  }
+  @include mx.breakpoint(tablet) {
+    padding: 96px 20px 24px;
+  }
+  @include mx.breakpoint(sp) {
+    min-height: 95svh;
+  }
   &__content {
     width: 100%;
     min-height: calc(90svh - 128px);
@@ -13,7 +22,7 @@
   }
   &__title {
     margin: 0;
-    font-size: clamp(4.5rem, 11vw, 11.25rem);
+    font-size: clamp(4rem, 11vw, 11.25rem);
     font-weight: 500;
     line-height: 1;
     letter-spacing: .12em;
@@ -29,6 +38,9 @@
     font-weight: 500;
     letter-spacing: .4em;
     color: var(--text-accent);
+    @include mx.breakpoint(sp) {
+      font-size: 1.25rem;
+    }
   }
   &__text {
     position: relative;
@@ -40,14 +52,26 @@
     opacity: 0;
     transform: translate(-50px, 0);
     animation: appear 1s .9s ease-in-out forwards;
+    @include mx.breakpoint(tablet) {
+      padding: 0 0 48px 56px;
+    }
+    @include mx.breakpoint(sp) {
+      font-size: 15px;
+    }
     &::before {
       content: "";
       position: absolute;
       width: 72px;
       height: 1px;
       background-color: var(--color-gold);
-      top: 50%;
+      top: 26px;
       left: 0;
+      @include mx.breakpoint(tablet) {
+        width: 40px;
+      }
+      @include mx.breakpoint(sp) {
+        top: 24px;
+      }
     }
   }
   &__cta {
@@ -55,6 +79,9 @@
     opacity: 0;
     transform: translate( 0, 50px);
     animation: appear 1s 1.2s ease-in-out forwards;
+    @include mx.breakpoint(tablet) {
+      margin: auto 0 0 0;
+    }
     .c-button {
       margin-top: 10px;
     }
@@ -64,6 +91,14 @@
     font-size: 1rem;
     line-height: 1.7;
     letter-spacing: .05em;
+    @include mx.breakpoint(sp) {
+      font-size: 15px;
+    }
+    br {
+      @include mx.breakpoint(sp) {
+        display: none;
+      }
+    }
   }
 }
 

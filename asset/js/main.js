@@ -26,8 +26,8 @@ function initCustomCursor() {
 
   let rafId;
   (function animRing() {
-    rx += (mx - rx) * 0.04;
-    ry += (my - ry) * 0.04;
+    rx += (mx - rx) * 0.07;
+    ry += (my - ry) * 0.07;
     ring.style.left = rx + 'px';
     ring.style.top  = ry + 'px';
     rafId = requestAnimationFrame(animRing);
