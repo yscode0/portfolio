@@ -176,20 +176,6 @@
   }
   &__service-item {
     border-bottom: 1px solid rgba(255, 253, 243, 0.2);
-    &:first-child {
-      .p-top__service-link {
-        padding: 0 0 40px;
-        @include mx.hover {
-          padding: 0 20px 40px;
-          @include mx.breakpoint(sp) {
-            padding: 0 16px 24px;
-          }
-        }
-        @include mx.breakpoint(sp) {
-          padding: 0 0 24px;
-        }
-      }
-    }
   }
   &__service-link {
     position: relative;

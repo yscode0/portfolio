@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", function() {
   initBurgerMenu();
   initHeader()
   initFadeInAnimations();
-  initSmoothScroll();
 });
 
 // カスタムカーソル
@@ -76,37 +75,7 @@ function initBurgerMenu() {
       closeMenu();
     }
   });
-
-  // メニュー外クリックで閉じる
-  // document.addEventListener("click", (e) => {
-  //   if (!burgerMenu.classList.contains("is-open")) return;
-  //   const clickedInsideMenu = burgerMenu.contains(e.target);
-  //   const clickedButton = [...burgerButtons].some(btn => btn.contains(e.target));
-  //   if (!clickedInsideMenu && !clickedButton) closeMenu();
-  // });
 }
-
-// スクロールに応じたヘッダー表示制御
-// function initScrollHeader() {
-//   const header = document.querySelector(".js-header");
-//   const hero = document.querySelector(".js-hero");
-
-//   if (!header || !hero) return;
-
-//   const headerHeight = header.offsetHeight;
-
-//   const observer = new IntersectionObserver(
-//     (entries) => {
-//       const entry = entries[0];
-//       header.classList.toggle("is-active", !entry.isIntersecting);
-//     },
-//     {
-//       rootMargin: `-${headerHeight}px 0px 0px 0px`
-//     }
-//   );
-
-//   observer.observe(hero);
-// }
 
 // ヘッダー上スクロールで出現、下スクロールで消える
 function initHeader() {
@@ -169,38 +138,4 @@ function initFadeInAnimations() {
   }, options);
 
   fadeElements.forEach(el => observer.observe(el));
-}
-
-// スムーススクロール機能
-function initSmoothScroll() {
-  const header = document.querySelector(".js-header");
-
-  document.addEventListener("click", (e) => {
-    const link = e.target.closest('a[href^="#"]');
-    if (!link) return;
-
-    if (link.pathname !== location.pathname) return;
-
-    const href = link.getAttribute("href");
-    if (href === "#") return;
-
-    const target = document.querySelector(href);
-    if (!target) return;
-
-    e.preventDefault();
-
-    const headerOffset = header ? header.offsetHeight : 0;
-
-    const targetPosition =
-      target.getBoundingClientRect().top +
-      window.scrollY -
-      headerOffset;
-
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    window.scrollTo({
-      top: targetPosition,
-      behavior: prefersReducedMotion ? "auto" : "smooth"
-    });
-  });
 }

@@ -1,0 +1,60 @@
+@use "./../../foundation/_mixin.scss" as mx;
+
+.c-breadcrumb {
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+  &__item {
+    position: relative;
+    text-transform: capitalize;
+    font-size: 1rem;
+    letter-spacing: .05em;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -16px;
+      width: 8px;
+      aspect-ratio: 1;
+      border-top: 1px solid #333;
+      border-right: 1px solid #333;
+      transform: translateY(-50%) rotate(45deg);
+    }
+    &:last-child {
+      &::after {
+        display: none;
+      }
+    }
+  }
+  &__link {
+    position: relative;
+    text-decoration: none;
+    color: var(--text);
+    opacity: .7;
+    transition: opacity .3s;
+    @include mx.hover {
+      opacity: 1;
+      &::before {
+        transform: scaleX(1);
+      }
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--color-gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .3s;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+@use "./../../foundation/_mixin.scss" as mx;
+
+.p-archive {
+  padding: 120px 0 0;
+  &__content {
+    .c-text {
+      margin-top: 40px;
+    }
+    & + .p-archive__content {
+      margin-top: 80px;
+    }
+  }
+  &__list {
+    margin-top: 32px;
+  }
+}

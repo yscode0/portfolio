@@ -1,0 +1,23 @@
+@use "./../foundation/mixin" as mx;
+@include mx.breakpoint(tablet) {
+}
+@include mx.breakpoint(sp) {
+}
+
+.l-page-header {
+  padding-top: 63px;
+  &__content {
+    min-height: 380px;
+    display: flex;
+    align-items: center;
+  }
+  &__title {
+    margin: 0;
+    font-size: clamp(2.5rem, 6vw, 6rem);
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: .1em;
+    text-transform: capitalize;
+    color: var(--text);
+  }
+}

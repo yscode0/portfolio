@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YOSHI CODE | Yoshinori Tanaka</title>
+  <meta name="description" content="YOSHI CODE | Yoshinori Tanaka">
+  <meta name="keywords" content="YOSHI CODE | Yoshinori Tanaka">
+  <link rel="stylesheet" href="asset/css/app.css" />
+  <link rel="shortcut icon" href="img/favicon.ico">
+
+  <!-- Googleフォント -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+
+
+  <!-- OGP設定　記載必要 -->
+  <meta property="og:url" content="" />
+  <meta property="og:image" content="" />
+  <meta property="og:site_name" content="YOSHI CODE | Yoshinori Tanaka" />
+  <meta property="og:title" content="YOSHI CODE | Yoshinori Tanaka" />
+  <meta property="og:description" content="YOSHI CODE | Yoshinori Tanaka" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+</head>
+<body>
+  <!-- カスタムカーソル -->
+  <div class="c-cursor js-cursor"></div>
+  <div class="c-cursor__ring js-cursor-ring"></div>
+
+  <!-- ヘッダー -->
+  <header class="l-header js-header">
+    <!-- ヘッダーロゴ -->
+    <div class="c-site-title">
+      <a class="c-site-title__link dm-mono" href="index.html">
+        yosh<span class="u-accent">i</span> code
+      </a>
+    </div>
+    <!-- ヘッダーナビ -->
+    <nav class="l-header__nav">
+      <ul class="l-header__menu">
+        <li class="l-header__item dm-mono">
+          <a class="l-header__item-link" href="index.html">top</a>
+        </li>
+        <li class="l-header__item dm-mono">
+          <a class="l-header__item-link" href="works.html">works</a>
+        </li>
+        <li class="l-header__item dm-mono">
+          <a class="l-header__item-link" href="about.html">about</a>
+        </li>
+        <li class="l-header__item dm-mono">
+          <a class="l-header__item-link" href="service.html">service</a>
+        </li>
+        <li class="l-header__item dm-mono">
+          <a class="l-header__item-link" href="contact.html">contact</a>
+        </li>
+      </ul>
+    </nav>
+    <!-- バーガーボタン -->
+    <button class="l-header__burger js-menu-toggle">
+      <span class="l-header__burger-bar"></span>
+      <span class="l-header__burger-bar"></span>
+    </button>
+
+    <div class="l-header__burger-content js-menu">
+      <div class="l-header__burger-header">
+        <div class="c-site-title">
+          <a class="c-site-title__link dm-mono" href="index.html">
+            yosh<span class="u-accent">i</span> code
+          </a>
+        </div>
+        <button class="l-header__burger js-menu-toggle">
+          <span class="l-header__burger-bar"></span>
+          <span class="l-header__burger-bar"></span>
+        </button>
+      </div>
+      <div class="l-header__burger-body">
+        <nav class="l-header__burger-nav">
+          <ul class="l-header__burger-menu">
+            <li class="l-header__burger-item dm-mono">
+              <a class="l-header__burger-item-link" href="index.html">top</a>
+            </li>
+            <li class="l-header__burger-item dm-mono">
+              <a class="l-header__burger-item-link" href="works.html">works</a>
+            </li>
+            <li class="l-header__burger-item dm-mono">
+              <a class="l-header__burger-item-link" href="about.html">about</a>
+            </li>
+            <li class="l-header__burger-item dm-mono">
+              <a class="l-header__burger-item-link" href="service.html">service</a>
+            </li>
+            <li class="l-header__burger-item dm-mono">
+              <a class="l-header__burger-item-link" href="contact.html">contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="l-main">
+
+    <!-- ページヘッダー -->
+    <section class="l-page-header js-mv">
+      <div class="inner">
+        <div class="l-page-header__content">
+          <h1 class="l-page-header__title cormorant-garamond">
+            selected
+            <span class="u-accent">works</span>
+          </h1>
+        </div>
+        <!-- パンくずリスト -->
+        <ul class="c-breadcrumb__list">
+          <li class="c-breadcrumb__item dm-mono">
+            <a class="c-breadcrumb__link" href="index.html">
+              top
+            </a>
+          </li>
+          <li class="c-breadcrumb__item dm-mono">
+            selected works
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 実績一覧 -->
+    <section class="p-archive">
+      <div class="inner">
+
+        <!-- 実案件 -->
+        <div class="p-archive__content">
+          <h2 class="c-title__page dm-mono">
+            Client Work
+          </h2>
+          <div class="p-archive__list">
+            <ul class="c-works__list">
+              <li class="c-works__item u-fade-up js-fade">
+                <article class="c-works__card">
+                  <a class="c-works__link" href="single-works.html">
+                    <span class="c-works__arrow"></span>
+                    <figure class="c-works__img">
+                      <img src="asset/images/corporate-site.webp" alt="建設業サイト" loading="lazy" width="413" height="239">
+                    </figure>
+                    <h3 class="c-works__title dm-mono">
+                      corporate site
+                    </h3>
+                    <p class="c-works__text">
+                      保守性を意識したCSS設計と、WordPressでの柔軟な運用を想定したコーディングで構築。スマートフォンから快適に閲覧できるレスポンシブ対応を丁寧に実装しました。
+                    </p>
+                    <dl class="c-works__meta">
+                      <dt class="c-works__term dm-mono">
+                        role
+                      </dt>
+                      <dd class="c-works__desc">
+                        <ul class="c-works__tag-list">
+                          <li class="c-works__tag-item dm-mono">
+                            design
+                          </li>
+                          <li class="c-works__tag-item dm-mono">
+                            coding
+                          </li>
+                        </ul>
+                      </dd>
+                      <dt class="c-works__term dm-mono">
+                        tech
+                      </dt>
+                      <dd class="c-works__desc">
+                        <ul class="c-works__tag-list">
+                          <li class="c-works__tag-item dm-mono">
+                            HTML
+                          </li>
+                          <li class="c-works__tag-item dm-mono">
+                            SCSS
+                          </li>
+                          <li class="c-works__tag-item dm-mono">
+                            JS
+                          </li>
+                          <li class="c-works__tag-item dm-mono">
+                            WordPress
+                          </li>
+                        </ul>
+                      </dd>
+                    </dl>
+                  </a>
+                </article>
+              </li>
+              <li class="c-works__item u-fade-up js-fade">
+                <article class="c-works__card">
+                  <a class="c-works__link" href="single-works.html">
+                    <span class="c-works__arrow"></span>
+                    <figure class="c-works__img">
+                      <img src="asset/images/salon-site.webp" alt="eyelash salonサイト" loading="lazy" width="413" height="239">
+                    </figure>
+                    <h3 class="c-works__title dm-mono">
+                      salon site
+                    </h3>
+                    <p class="c-works__text">
+                      デザインの世界観を崩さないよう、細部のアニメーションやフォント選定にまでこだわってコーディング。予約ボタンへのスムーズな導線をUIで表現しました。
+                    </p>
+                    <dl class="c-works__meta">
+                      <dt class="c-works__term dm-mono">
+                        role
+                      </dt>
+                      <dd class="c-works__desc">
+                        <ul class="c-works__tag-list">
+                          <li class="c-works__tag-item dm-mono">
+                            design
+                          </li>
+                          <li class="c-works__tag-item dm-mono">
+                            coding
+                          </li>
+                        </ul>
+                      </dd>
+                      <dt class="c-works__term dm-mono">
+                        tech
+                      </dt>
+                      <dd class="c-works__desc">
+                        <ul class="c-works__tag-list">
+                          <li class="c-works__tag-item dm-mono">
+                            HTML
+                          </li>
+                          <li class="c-works__tag-item dm-mono">
+                            SCSS
+                          </li>
+                          <li class="c-works__tag-item dm-mono">
+                            JS
+                          </li>
+                          <li class="c-works__tag-item dm-mono">
+                            WordPress
+                          </li>
+                        </ul>
+                      </dd>
+                    </dl>
+                  </a>
+                </article>
+              </li>
+              <li class="c-works__item u-fade-up js-fade">
+                <article class="c-works__card">
+                  <a class="c-works__link" href="single-works.html">
+                    <span class="c-works__arrow"></span>
+                    <figure class="c-works__img">
+                      <img src="asset/images/event-site.webp" alt="イベントサイト" loading="lazy" width="413" height="239">
+                    </figure>
+                    <h3 class="c-works__title dm-mono">
+                      event site
+                    </h3>
+                    <p class="c-works__text">
+                      情報量が多いサイトでも迷わせないよう、レイアウトの優先順位を意識して実装。WordPressのブロック構成も更新しやすさを考慮して組みました。
+                    </p>
+                    <dl class="c-works__meta">
+                      <dt class="c-works__term dm-mono">
+                        role
+                      </dt>
+                      <dd class="c-works__desc">
+                        <ul class="c-works__tag-list">
+                          <li class="c-works__tag-item dm-mono">
+                            design
+                          </li>
+                          <li class="c-works__tag-item dm-mono">
+                            coding
+                          </li>
+                        </ul>
+                      </dd>
+                      <dt class="c-works__term dm-mono">
+                        tech
+                      </dt>
+                      <dd class="c-works__desc">
+                        <ul class="c-works__tag-list">
+                          <li class="c-works__tag-item dm-mono">
+                            HTML
+                          </li>
+                          <li class="c-works__tag-item dm-mono">
+                            SCSS
+                          </li>
+                          <li class="c-works__tag-item dm-mono">
+                            JS
+                          </li>
+                          <li class="c-works__tag-item dm-mono">
+                            WordPress
+                          </li>
+                        </ul>
+                      </dd>
+                    </dl>
+                  </a>
+                </article>
+              </li>
+              <li class="c-works__item u-fade-up js-fade">
+                <article class="c-works__card">
+                  <a class="c-works__link" href="single-works.html">
+                    <span class="c-works__arrow"></span>
+                    <figure class="c-works__img">
+                      <img src="asset/images/portfolio-site.webp" alt="ポートフォリオサイト" loading="lazy" width="413" height="239">
+                    </figure>
+                    <h3 class="c-works__title dm-mono">
+                      portfolio site
+                    </h3>
+                    <p class="c-works__text">
+                      自身のポートフォリオとして設計・デザイン・コーディングまで一貫して制作。視線の流れや余白設計を意識し、情報が伝わりやすい構成に仕上げました。アニメーションやインタラクションにも配慮し、ユーザー体験と保守性の両立を意識した実装を行っています。
+                    </p>
+                    <dl class="c-works__meta">
+                      <dt class="c-works__term dm-mono">
+                        role
+                      </dt>
+                      <dd class="c-works__desc">
+                        <ul class="c-works__tag-list">
+                          <li class="c-works__tag-item dm-mono">
+                            design
+                          </li>
+                          <li class="c-works__tag-item dm-mono">
+                            coding
+                          </li>
+                        </ul>
+                      </dd>
+                      <dt class="c-works__term dm-mono">
+                        tech
+                      </dt>
+                      <dd class="c-works__desc">
+                        <ul class="c-works__tag-list">
+                          <li class="c-works__tag-item dm-mono">
+                            HTML
+                          </li>
+                          <li class="c-works__tag-item dm-mono">
+                            SCSS
+                          </li>
+                          <li class="c-works__tag-item dm-mono">
+                            JS
+                          </li>
+                          <li class="c-works__tag-item dm-mono">
+                            WordPress
+                          </li>
+                        </ul>
+                      </dd>
+                    </dl>
+                  </a>
+                </article>
+              </li>
+            </ul>
+          </div>
+          <p class="c-text">
+            ※掲載している実績は一部です。守秘義務の都合上、非公開の制作実績も多数ございます。詳細についてはお問い合わせください。
+          </p>
+        </div>
+
+        <!-- 架空サイト -->
+        <div class="p-archive__content">
+          <h2 class="c-title__page dm-mono">
+            Practice
+          </h2>
+          <div class="p-archive__list">
+            <ul class="c-works__list">
+              <li class="c-works__item u-fade-up js-fade">
+                <article class="c-works__card">
+                  <a class="c-works__link" href="single-works.html">
+                    <span class="c-works__arrow"></span>
+                    <figure class="c-works__img">
+                      <img src="asset/images/demo-site1.webp" alt="デモサイト" loading="lazy" width="413" height="239">
+                    </figure>
+                    <h3 class="c-works__title dm-mono">
+                      demo site
+                    </h3>
+                    <p class="c-works__text">
+                      Figmaのデザインカンプをもとにコーディングを担当。WordPressを用いた更新しやすい設計と、保守性を意識した実装で運用面にも配慮しています。
+                    </p>
+                    <dl class="c-works__meta">
+                      <dt class="c-works__term dm-mono">
+                        role
+                      </dt>
+                      <dd class="c-works__desc">
+                        <ul class="c-works__tag-list">
+                          <li class="c-works__tag-item dm-mono">
+                            coding
+                          </li>
+                        </ul>
+                      </dd>
+                      <dt class="c-works__term dm-mono">
+                        tech
+                      </dt>
+                      <dd class="c-works__desc">
+                        <ul class="c-works__tag-list">
+                          <li class="c-works__tag-item dm-mono">
+                            HTML
+                          </li>
+                          <li class="c-works__tag-item dm-mono">
+                            SCSS
+                          </li>
+                          <li class="c-works__tag-item dm-mono">
+                            JS
+                          </li>
+                          <li class="c-works__tag-item dm-mono">
+                            WordPress
+                          </li>
+                        </ul>
+                      </dd>
+                    </dl>
+                  </a>
+                </article>
+              </li>
+              <li class="c-works__item u-fade-up js-fade">
+                <article class="c-works__card">
+                  <a class="c-works__link" href="single-works.html">
+                    <span class="c-works__arrow"></span>
+                    <figure class="c-works__img">
+                      <img src="asset/images/demo-site2.webp" alt="デモサイト" loading="lazy" width="413" height="239">
+                    </figure>
+                    <h3 class="c-works__title dm-mono">
+                      demo site
+                    </h3>
+                    <p class="c-works__text">
+                      採用サイトを想定し、求職者がスムーズにエントリーまで進める導線設計を意識してコーディングを実装。アニメーションによる体験向上にも配慮しています。
+                    </p>
+                    <dl class="c-works__meta">
+                      <dt class="c-works__term dm-mono">
+                        role
+                      </dt>
+                      <dd class="c-works__desc">
+                        <ul class="c-works__tag-list">
+                          <li class="c-works__tag-item dm-mono">
+                            coding
+                          </li>
+                        </ul>
+                      </dd>
+                      <dt class="c-works__term dm-mono">
+                        tech
+                      </dt>
+                      <dd class="c-works__desc">
+                        <ul class="c-works__tag-list">
+                          <li class="c-works__tag-item dm-mono">
+                            HTML
+                          </li>
+                          <li class="c-works__tag-item dm-mono">
+                            SCSS
+                          </li>
+                          <li class="c-works__tag-item dm-mono">
+                            JS
+                          </li>
+                        </ul>
+                      </dd>
+                    </dl>
+                  </a>
+                </article>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- フッター -->
+  <footer class="l-footer">
+    <div class="c-cta">
+      <div class="inner">
+        <div class="c-cta__content u-fade-up js-fade">
+          <p class="c-text">
+            制作会社様のコーディングパートナーとして<br>
+            HTML / CSS / JavaScript / WordPress のコーディング業務をサポートしています。
+          </p>
+          <p class="c-text">
+            案件のご相談などお気軽にお問い合わせください。
+          </p>
+          <div class="c-cta__btn">
+            <a class="c-cta__btn-link dm-mono" href="#">
+              Contact
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="inner">
+      <div class="l-footer__content">
+        <div class="c-site-title">
+          <a class="c-site-title__link dm-mono" href="index.html">
+            yosh<span class="u-accent">i</span> code
+          </a>
+        </div>
+        <nav class="l-footer__nav">
+          <ul class="l-footer__menu">
+            <li class="l-footer__item dm-mono">
+              <a class="l-footer__item-link" href="index.html">top</a>
+            </li>
+            <li class="l-footer__item dm-mono">
+              <a class="l-footer__item-link" href="works.html">works</a>
+            </li>
+            <li class="l-footer__item dm-mono">
+              <a class="l-footer__item-link" href="about.html">about</a>
+            </li>
+            <li class="l-footer__item dm-mono">
+              <a class="l-footer__item-link" href="service.html">service</a>
+            </li>
+            <li class="l-footer__item l-footer__item-cta dm-mono">
+              <a class="l-footer__item-link" href="contact.html">contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="l-footer__copyright">
+      <p class="l-footer__copyright-text">
+        Copyright 2026 Yoshi Code
+      </p>
+    </div>
+  </footer>
+
+<script src="asset/js/main.js"></script>
+</body>
+</html>

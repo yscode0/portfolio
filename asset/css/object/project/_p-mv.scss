@@ -84,6 +84,9 @@
     }
     .c-button {
       margin-top: 10px;
+      @include mx.breakpoint(sp) {
+        text-align: right;
+      }
     }
   }
   &__cta-text {

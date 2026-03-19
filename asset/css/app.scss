@@ -6,6 +6,7 @@
 @use "layout/l-header";
 @use "layout/l-main";
 @use "layout/l-footer";
+@use "layout/l-page-header";
 
 //object
 //component
@@ -16,10 +17,12 @@
 @use "object/component/c-cursor";
 @use "object/component/c-works";
 @use "object/component/c-cta";
+@use "object/component/c-breadcrumb";
 
 //project
 @use "object/project/p-mv";
 @use "object/project/p-top";
+@use "object/project/p-archive";
 
 //utility
 @use "object/utility/u-fade-up";
