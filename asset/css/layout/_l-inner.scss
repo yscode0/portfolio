@@ -1,0 +1,18 @@
+@use "./../foundation/mixin" as mx;
+@include mx.breakpoint(tablet) {
+}
+@include mx.breakpoint(sp) {
+}
+
+.l-inner {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+  @include mx.breakpoint(note) {
+    padding: 0 40px;
+  }
+  @include mx.breakpoint(tablet) {
+    padding: 0 20px;
+  }
+}

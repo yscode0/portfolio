@@ -6,10 +6,20 @@
 
 .l-page-header {
   padding-top: 63px;
+  @include mx.breakpoint(tablet) {
+    padding-top: 82px;
+  }
   &__content {
-    min-height: 380px;
+    min-height: 360px;
     display: flex;
     align-items: center;
+    border-bottom: 1px solid rgba(62, 68, 70, 0.2);
+    @include mx.breakpoint(tablet) {
+      min-height: 280px;
+    }
+    @include mx.breakpoint(sp) {
+      min-height: 240px;
+    }
   }
   &__title {
     margin: 0;

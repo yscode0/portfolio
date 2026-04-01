@@ -3,18 +3,24 @@
 .c-breadcrumb {
   &__list {
     margin: 0;
-    padding: 0;
+    padding: 8px 16px;
     list-style: none;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     gap: 32px;
+    @include mx.breakpoint(tablet) {
+      padding: 8px 0;
+    }
   }
   &__item {
     position: relative;
     text-transform: capitalize;
     font-size: 1rem;
     letter-spacing: .05em;
+    @include mx.breakpoint(sp) {
+      font-size: .875rem;
+    }
     &::after {
       content: "";
       position: absolute;

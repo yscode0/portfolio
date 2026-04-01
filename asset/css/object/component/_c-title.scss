@@ -22,5 +22,8 @@
     font-weight: 400;
     line-height: 1.2;
     letter-spacing: .1em;
+    @include mx.breakpoint(sp) {
+      font-size: 1.5rem;
+    }
   }
 }

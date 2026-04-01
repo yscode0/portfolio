@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YOSHI CODE | About</title>
+  <meta name="description" content="YOSHI CODE | Yoshinori Tanaka">
+  <meta name="keywords" content="YOSHI CODE | Yoshinori Tanaka">
+  <link rel="stylesheet" href="asset/css/app.css" />
+  <link rel="shortcut icon" href="img/favicon.ico">
+
+  <!-- Googleフォント -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- OGP設定　記載必要 -->
+  <meta property="og:url" content="" />
+  <meta property="og:image" content="" />
+  <meta property="og:site_name" content="YOSHI CODE | Yoshinori Tanaka" />
+  <meta property="og:title" content="YOSHI CODE | About" />
+  <meta property="og:description" content="YOSHI CODE | Yoshinori Tanaka" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+</head>
+<body>
+  <!-- カスタムカーソル -->
+  <div class="c-cursor js-cursor"></div>
+  <div class="c-cursor__ring js-cursor-ring"></div>
+
+  <!-- ヘッダー -->
+  <header class="l-header js-header">
+    <!-- ヘッダーロゴ -->
+    <div class="c-site-title">
+      <a class="c-site-title__link dm-mono" href="index.html">
+        yosh<span class="u-accent">i</span> code
+      </a>
+    </div>
+    <!-- ヘッダーナビ -->
+    <nav class="l-header__nav">
+      <ul class="l-header__menu">
+        <li class="l-header__item dm-mono">
+          <a class="l-header__item-link" href="index.html">top</a>
+        </li>
+        <li class="l-header__item dm-mono">
+          <a class="l-header__item-link" href="works.html">works</a>
+        </li>
+        <li class="l-header__item dm-mono">
+          <a class="l-header__item-link" href="about.html">about</a>
+        </li>
+        <li class="l-header__item dm-mono">
+          <a class="l-header__item-link" href="service.html">service</a>
+        </li>
+        <li class="l-header__item dm-mono">
+          <a class="l-header__item-link" href="contact.html">contact</a>
+        </li>
+      </ul>
+    </nav>
+    <!-- バーガーボタン -->
+    <button class="l-header__burger js-menu-toggle">
+      <span class="l-header__burger-bar"></span>
+      <span class="l-header__burger-bar"></span>
+    </button>
+
+    <div class="l-header__burger-content js-menu">
+      <div class="l-header__burger-header">
+        <div class="c-site-title">
+          <a class="c-site-title__link dm-mono" href="index.html">
+            yosh<span class="u-accent">i</span> code
+          </a>
+        </div>
+        <button class="l-header__burger js-menu-toggle">
+          <span class="l-header__burger-bar"></span>
+          <span class="l-header__burger-bar"></span>
+        </button>
+      </div>
+      <div class="l-header__burger-body">
+        <nav class="l-header__burger-nav">
+          <ul class="l-header__burger-menu">
+            <li class="l-header__burger-item dm-mono">
+              <a class="l-header__burger-item-link" href="index.html">top</a>
+            </li>
+            <li class="l-header__burger-item dm-mono">
+              <a class="l-header__burger-item-link" href="works.html">works</a>
+            </li>
+            <li class="l-header__burger-item dm-mono">
+              <a class="l-header__burger-item-link" href="about.html">about</a>
+            </li>
+            <li class="l-header__burger-item dm-mono">
+              <a class="l-header__burger-item-link" href="service.html">service</a>
+            </li>
+            <li class="l-header__burger-item dm-mono">
+              <a class="l-header__burger-item-link" href="contact.html">contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="l-main">
+
+    <!-- ページヘッダー -->
+    <section class="l-page-header js-mv">
+      <div class="inner">
+        <div class="l-page-header__content">
+          <h1 class="l-page-header__title cormorant-garamond">
+            about
+            <span class="u-accent">me</span>
+          </h1>
+        </div>
+        <!-- パンくずリスト -->
+        <ul class="c-breadcrumb__list">
+          <li class="c-breadcrumb__item dm-mono">
+            <a class="c-breadcrumb__link" href="index.html">
+              top
+            </a>
+          </li>
+          <li class="c-breadcrumb__item dm-mono">
+            about
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- プロフィール -->
+    <section class="p-about">
+      <div class="inner">
+        <div class="p-about__profile">
+          <figure class="p-about__img u-fade-up js-fade">
+            <img src="asset/images/yoshi.webp" alt="田中 克規" loading="lazy">
+            <figcaption class="p-about__caption">
+              <p class="p-about__name dm-mono">
+                Yosh<span class="u-accent">i</span>nori Tanaka
+              </p>
+              <p class="p-about__role dm-mono">
+                Web Coder
+              </p>
+            </figcaption>
+          </figure>
+          <div class="p-about__info u-fade-up js-fade">
+            <h2 class="c-title__page dm-mono">Profile</h2>
+            <p class="c-text">
+              フリーランスのWebコーダーとして活動している田中克規です。
+            </p>
+            <p class="c-text">
+              HTML / CSS / JavaScript を中心に、WordPress構築まで対応しています。デザインの意図を汲み取りながら、BEM設計や保守性を意識したコーディングを心がけています。
+            </p>
+            <p class="c-text">
+              制作会社様のコーディングパートナーとして、スピードと品質の両立を意識しながら丁寧な実装を行っています。コミュニケーションを大切にし、長くお付き合いいただけるパートナーを目指しています。
+            </p>
+            <dl class="p-about__meta">
+              <dt class="p-about__term dm-mono">name</dt>
+              <dd class="p-about__desc">田中 克規（Yoshinori Tanaka）</dd>
+              <dt class="p-about__term dm-mono">base</dt>
+              <dd class="p-about__desc">大阪府</dd>
+              <dt class="p-about__term dm-mono">works</dt>
+              <dd class="p-about__desc">フリーランス Webコーダー</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- スキル -->
+    <section class="p-about__skill">
+      <div class="inner">
+        <h2 class="c-title cormorant-garamond">
+          sk<span class="u-accent">i</span>ll
+          <span class="c-title__line"></span>
+        </h2>
+        <div class="p-about__skill-content">
+          <ul class="p-about__skill-list">
+            <li class="p-about__skill-item u-fade-up js-fade">
+              <div class="p-about__skill-card">
+                <span class="p-about__skill-num dm-mono">01</span>
+                <h3 class="p-about__skill-title dm-mono">HTML / CSS</h3>
+                <p class="c-text">
+                  セマンティックなHTML構造とBEM設計を基本に、保守性・可読性の高いコーディングを行います。SCSSを用いた効率的なスタイル管理にも対応しています。
+                </p>
+              </div>
+            </li>
+            <li class="p-about__skill-item u-fade-up js-fade">
+              <div class="p-about__skill-card">
+                <span class="p-about__skill-num dm-mono">02</span>
+                <h3 class="p-about__skill-title dm-mono">JavaScript</h3>
+                <p class="c-text">
+                  バニラJSによるインタラクション実装を得意としています。スクロールアニメーションやモーダル、スライダーなど、UXを高める機能の実装に対応します。
+                </p>
+              </div>
+            </li>
+            <li class="p-about__skill-item u-fade-up js-fade">
+              <div class="p-about__skill-card">
+                <span class="p-about__skill-num dm-mono">03</span>
+                <h3 class="p-about__skill-title dm-mono">WordPress</h3>
+                <p class="c-text">
+                  オリジナルテーマの構築からカスタムフィールド・カスタム投稿タイプの実装まで対応。クライアントが更新しやすい設計を意識して構築します。
+                </p>
+              </div>
+            </li>
+            <li class="p-about__skill-item u-fade-up js-fade">
+              <div class="p-about__skill-card">
+                <span class="p-about__skill-num dm-mono">04</span>
+                <h3 class="p-about__skill-title dm-mono">Figma</h3>
+                <p class="c-text">
+                  デザインカンプの読み取りはもちろん、簡単なデザイン修正や素材の書き出しも対応可能です。デザイナーとのスムーズな連携を意識しています。
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- スキルタグ -->
+        <div class="p-about__skill-tags u-fade-up js-fade">
+          <ul class="p-about__tag-list">
+            <li class="p-about__tag-item dm-mono">HTML5</li>
+            <li class="p-about__tag-item dm-mono">CSS3</li>
+            <li class="p-about__tag-item dm-mono">Sass / SCSS</li>
+            <li class="p-about__tag-item dm-mono">JavaScript</li>
+            <li class="p-about__tag-item dm-mono">jQuery</li>
+            <li class="p-about__tag-item dm-mono">WordPress</li>
+            <li class="p-about__tag-item dm-mono">Figma</li>
+            <li class="p-about__tag-item dm-mono">Git / GitHub</li>
+            <li class="p-about__tag-item dm-mono">VSCode</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 経歴 -->
+    <section class="p-about__history">
+      <div class="inner">
+        <h2 class="c-title cormorant-garamond">
+          h<span class="u-accent">i</span>story
+          <span class="c-title__line"></span>
+        </h2>
+        <div class="p-about__history-content">
+          <ol class="p-about__history-list">
+            <li class="p-about__history-item u-fade-up js-fade">
+              <span class="p-about__history-year dm-mono">2020</span>
+              <div class="p-about__history-body">
+                <h3 class="p-about__history-title">Web制作に独学で入門</h3>
+                <p class="c-text">HTML / CSS を独学で学び始める。書籍やオンライン教材をもとに基礎を習得。</p>
+              </div>
+            </li>
+            <li class="p-about__history-item u-fade-up js-fade">
+              <span class="p-about__history-year dm-mono">2021</span>
+              <div class="p-about__history-body">
+                <h3 class="p-about__history-title">JavaScript・WordPressの学習開始</h3>
+                <p class="c-text">バニラJSやWordPressのオリジナルテーマ構築を学び、実装の幅を広げる。</p>
+              </div>
+            </li>
+            <li class="p-about__history-item u-fade-up js-fade">
+              <span class="p-about__history-year dm-mono">2022</span>
+              <div class="p-about__history-body">
+                <h3 class="p-about__history-title">制作会社でのコーディング業務開始</h3>
+                <p class="c-text">副業としてコーポレートサイトや店舗サイトのコーディングを担当。実務経験を積む。</p>
+              </div>
+            </li>
+            <li class="p-about__history-item u-fade-up js-fade">
+              <span class="p-about__history-year dm-mono">2024</span>
+              <div class="p-about__history-body">
+                <h3 class="p-about__history-title">フリーランスとして独立</h3>
+                <p class="c-text">フリーランスWebコーダーとして独立。制作会社様のコーディングパートナーとして複数の案件に携わる。</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- フッター -->
+  <footer class="l-footer">
+    <div class="c-cta">
+      <div class="inner">
+        <div class="c-cta__content u-fade-up js-fade">
+          <p class="c-text">
+            制作会社様のコーディングパートナーとして<br>
+            HTML / CSS / JavaScript / WordPress のコーディング業務をサポートしています。
+          </p>
+          <p class="c-text">
+            案件のご相談などお気軽にお問い合わせください。
+          </p>
+          <div class="c-cta__btn">
+            <a class="c-cta__btn-link dm-mono" href="#">
+              Contact
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="inner">
+      <div class="l-footer__content">
+        <div class="c-site-title">
+          <a class="c-site-title__link dm-mono" href="index.html">
+            yosh<span class="u-accent">i</span> code
+          </a>
+        </div>
+        <nav class="l-footer__nav">
+          <ul class="l-footer__menu">
+            <li class="l-footer__item dm-mono">
+              <a class="l-footer__item-link" href="index.html">top</a>
+            </li>
+            <li class="l-footer__item dm-mono">
+              <a class="l-footer__item-link" href="works.html">works</a>
+            </li>
+            <li class="l-footer__item dm-mono">
+              <a class="l-footer__item-link" href="about.html">about</a>
+            </li>
+            <li class="l-footer__item dm-mono">
+              <a class="l-footer__item-link" href="service.html">service</a>
+            </li>
+            <li class="l-footer__item l-footer__item-cta dm-mono">
+              <a class="l-footer__item-link" href="contact.html">contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="l-footer__copyright">
+      <p class="l-footer__copyright-text">
+        Copyright 2026 Yoshi Code
+      </p>
+    </div>
+  </footer>
+
+<script src="asset/js/main.js"></script>
+</body>
+</html>

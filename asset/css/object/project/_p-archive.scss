@@ -2,9 +2,15 @@
 
 .p-archive {
   padding: 120px 0 0;
+  @include mx.breakpoint(tablet) {
+    padding: 80px 0 0;
+  }
   &__content {
     .c-text {
       margin-top: 40px;
+      @include mx.breakpoint(tablet) {
+        margin-top: 24px;
+      }
     }
     & + .p-archive__content {
       margin-top: 80px;
@@ -12,5 +18,8 @@
   }
   &__list {
     margin-top: 32px;
+    @include mx.breakpoint(tablet) {
+      margin-top: 24px;
+    }
   }
 }

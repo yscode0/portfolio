@@ -37,8 +37,10 @@
 }
 
 // 標準カーソル削除
-*, *::before, *::after {
-  cursor: none !important;
+@media (hover: hover) and (pointer: fine) {
+  *, *::before, *::after {
+    cursor: none !important;
+  }
 }
 
 // ドラッグハイライトカスタム
@@ -72,20 +74,6 @@ body {
 .dm-mono {
   font-family: "DM Mono", monospace;
   font-style: normal;
-}
-
-// 共通項目があれば
-.inner {
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 80px;
-  @include breakpoint(note) {
-    padding: 0 40px;
-  }
-  @include breakpoint(tablet) {
-    padding: 0 20px;
-  }
 }
 
 :root {
