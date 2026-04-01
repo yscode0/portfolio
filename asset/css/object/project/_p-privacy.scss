@@ -1,0 +1,100 @@
+@use "./../../foundation/_mixin.scss" as mx;
+
+
+.p-privacy {
+  padding: 80px 0 120px;
+  border-bottom: 1px solid rgba(62, 68, 70, 0.2);
+  @include mx.breakpoint(tablet) {
+    padding: 56px 0 80px;
+  }
+
+  &__content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  &__lead {
+    padding-bottom: 56px;
+    border-bottom: 1px solid rgba(62, 68, 70, 0.2);
+    line-height: 1.9;
+    @include mx.breakpoint(sp) {
+      padding-bottom: 40px;
+    }
+  }
+
+  &__block {
+    padding: 48px 0;
+    border-bottom: 1px solid rgba(62, 68, 70, 0.2);
+    @include mx.breakpoint(sp) {
+      padding: 36px 0;
+    }
+    .c-text + .c-text {
+      margin-top: 16px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: .1em;
+    color: var(--text-accent);
+    @include mx.breakpoint(sp) {
+      margin-bottom: 20px;
+    }
+  }
+  
+  &__info {
+    margin-top: 24px;
+  }
+
+  &__list {
+    margin: 16px 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__list-item {
+    position: relative;
+    font-size: 1rem;
+    letter-spacing: .05em;
+    color: var(--text);
+    padding-left: 16px;
+    @include mx.breakpoint(sp) {
+      font-size: .9375rem;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 6px;
+      height: 1px;
+      background-color: var(--color-gold);
+    }
+  }
+
+  &__link {
+    color: var(--text-accent);
+    text-underline-offset: 4px;
+    transition: opacity 0.3s;
+    @include mx.hover {
+      opacity: .7;
+    }
+  }
+
+  &__date {
+    margin: 48px 0 0;
+    font-size: .875rem;
+    letter-spacing: .05em;
+    color: var(--text);
+    opacity: .5;
+    text-align: right;
+    @include mx.breakpoint(sp) {
+      margin-top: 36px;
+    }
+  }
+}

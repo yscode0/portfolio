@@ -3198,6 +3198,109 @@ body.is-hove .c-cursor__ring {
   transition: 0.3s;
 }
 
+.p-privacy {
+  padding: 80px 0 120px;
+  border-bottom: 1px solid rgba(62, 68, 70, 0.2);
+}
+@media (max-width: 768px) {
+  .p-privacy {
+    padding: 56px 0 80px;
+  }
+}
+.p-privacy__content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.p-privacy__lead {
+  padding-bottom: 56px;
+  border-bottom: 1px solid rgba(62, 68, 70, 0.2);
+  line-height: 1.9;
+}
+@media (max-width: 599px) {
+  .p-privacy__lead {
+    padding-bottom: 40px;
+  }
+}
+.p-privacy__block {
+  padding: 48px 0;
+  border-bottom: 1px solid rgba(62, 68, 70, 0.2);
+}
+@media (max-width: 599px) {
+  .p-privacy__block {
+    padding: 36px 0;
+  }
+}
+.p-privacy__block .c-text + .c-text {
+  margin-top: 16px;
+}
+.p-privacy__title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--text-accent);
+}
+@media (max-width: 599px) {
+  .p-privacy__title {
+    margin-bottom: 20px;
+  }
+}
+.p-privacy__info {
+  margin-top: 24px;
+}
+.p-privacy__list {
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.p-privacy__list-item {
+  position: relative;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  color: var(--text);
+  padding-left: 16px;
+}
+@media (max-width: 599px) {
+  .p-privacy__list-item {
+    font-size: 0.9375rem;
+  }
+}
+.p-privacy__list-item::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 6px;
+  height: 1px;
+  background-color: var(--color-gold);
+}
+.p-privacy__link {
+  color: var(--text-accent);
+  text-underline-offset: 4px;
+  transition: opacity 0.3s;
+}
+@media (hover: hover) and (pointer: fine) {
+  .p-privacy__link:hover {
+    opacity: 0.7;
+  }
+}
+.p-privacy__date {
+  margin: 48px 0 0;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  color: var(--text);
+  opacity: 0.5;
+  text-align: right;
+}
+@media (max-width: 599px) {
+  .p-privacy__date {
+    margin-top: 36px;
+  }
+}
+
 .u-fade-up {
   opacity: 0;
   filter: blur(10px);
