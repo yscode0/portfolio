@@ -1,0 +1,231 @@
+@use "./../../foundation/_mixin.scss" as mx;
+
+.p-contact {
+  padding: 120px 0;
+  border-bottom: 1px solid rgba(62, 68, 70, 0.2);
+  @include mx.breakpoint(tablet) {
+    padding: 80px 0;
+  }
+
+  &__content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  // lead
+  &__lead {
+    margin-bottom: 64px;
+    @include mx.breakpoint(sp) {
+      margin-bottom: 48px;
+    }
+    .c-text {
+      line-height: 2;
+    }
+  }
+
+  // form
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    @include mx.breakpoint(sp) {
+      gap: 32px;
+    }
+  }
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  &__label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: .875rem;
+    font-weight: 500;
+    letter-spacing: .05em;
+    color: var(--text);
+    text-transform: capitalize;
+  }
+  &__required {
+    font-size: .75rem;
+    letter-spacing: .05em;
+    color: var(--text-accent);
+    border: 1px solid var(--color-gold);
+    padding: 2px 8px;
+    line-height: 1.5;
+  }
+  &__optional {
+    font-size: .75rem;
+    letter-spacing: .05em;
+    color: var(--text);
+    border: 1px solid rgba(51, 51, 51, 0.3);
+    padding: 2px 8px;
+    line-height: 1.5;
+    opacity: .5;
+  }
+
+  // input
+  &__input,
+  &__textarea,
+  &__select {
+    width: 100%;
+    padding: 16px 20px;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 1rem;
+    letter-spacing: .05em;
+    color: var(--text);
+    background-color: transparent;
+    border: 1px solid rgba(62, 68, 70, 0.3);
+    border-radius: 0;
+    outline: none;
+    transition: border-color 0.3s;
+    appearance: none;
+    -webkit-appearance: none;
+    @include mx.breakpoint(sp) {
+      font-size: .9375rem;
+      padding: 14px 16px;
+    }
+    &::placeholder {
+      color: var(--text);
+      opacity: .3;
+    }
+    &:focus {
+      border-color: var(--color-gold);
+    }
+  }
+  &__textarea {
+    resize: vertical;
+    min-height: 200px;
+    line-height: 1.8;
+  }
+
+  // select
+  &__select-wrap {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      width: 8px;
+      aspect-ratio: 1;
+      border-bottom: 1px solid var(--text);
+      border-right: 1px solid var(--text);
+      transform: translateY(-70%) rotate(45deg);
+      pointer-events: none;
+      transition: border-color 0.3s;
+    }
+  }
+  &__select {
+    cursor: pointer;
+    &:focus + .p-contact__select-wrap::after {
+      border-color: var(--color-gold);
+    }
+    option {
+      background-color: var(--color-cream);
+      color: var(--text);
+    }
+  }
+
+  // privacy
+  &__privacy {
+    margin-top: -8px;
+  }
+  &__privacy-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    cursor: pointer;
+  }
+  &__privacy-check {
+    position: relative;
+    flex: 0 0 auto;
+    width: 20px;
+    aspect-ratio: 1;
+    border: 1px solid rgba(62, 68, 70, 0.3);
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    transition: border-color 0.3s;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      width: 10px;
+      height: 6px;
+      border-left: 2px solid var(--color-gold);
+      border-bottom: 2px solid var(--color-gold);
+      transform: translate(-50%, -50%) rotate(-45deg);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    &:checked {
+      border-color: var(--color-gold);
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+  &__privacy-text {
+    font-size: .875rem;
+    letter-spacing: .05em;
+    color: var(--text);
+    opacity: .7;
+  }
+  &__privacy-link {
+    color: var(--text-accent);
+    text-underline-offset: 4px;
+    transition: opacity 0.3s;
+    @include mx.hover {
+      opacity: .7;
+    }
+  }
+
+  // submit
+  &__submit {
+    text-align: center;
+    margin-top: 8px;
+  }
+  &__submit-btn {
+    position: relative;
+    display: inline-block;
+    padding: 20px 80px;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: .2em;
+    color: var(--text-light);
+    background-color: var(--color-dark);
+    border: 2px solid transparent;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: .3s;
+    z-index: 0;
+    @include mx.breakpoint(sp) {
+      padding: 18px 56px;
+      width: 100%;
+    }
+    @include mx.hover {
+      border-color: var(--color-dark);
+      color: var(--text);
+      &::before {
+        transform: scaleX(1);
+      }
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: var(--color-cream);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+      z-index: -1;
+    }
+  }
+}
