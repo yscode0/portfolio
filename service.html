@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YOSHI CODE | Service</title>
+  <meta name="description" content="YOSHI CODE | Yoshinori Tanaka">
+  <meta name="keywords" content="YOSHI CODE | Yoshinori Tanaka">
+  <link rel="stylesheet" href="asset/css/app.css" />
+  <link rel="shortcut icon" href="img/favicon.ico">
+
+  <!-- Googleフォント -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- OGP設定　記載必要 -->
+  <meta property="og:url" content="" />
+  <meta property="og:image" content="" />
+  <meta property="og:site_name" content="YOSHI CODE | Yoshinori Tanaka" />
+  <meta property="og:title" content="YOSHI CODE | Service" />
+  <meta property="og:description" content="YOSHI CODE | Yoshinori Tanaka" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+</head>
+<body>
+  <!-- カスタムカーソル -->
+  <div class="c-cursor js-cursor"></div>
+  <div class="c-cursor__ring js-cursor-ring"></div>
+
+  <!-- ヘッダー -->
+  <header class="l-header js-header">
+    <div class="c-site-title">
+      <a class="c-site-title__link dm-mono" href="index.html">
+        yosh<span class="u-accent">i</span> code
+      </a>
+    </div>
+    <nav class="l-header__nav">
+      <ul class="l-header__menu">
+        <li class="l-header__item dm-mono">
+          <a class="l-header__item-link" href="index.html">top</a>
+        </li>
+        <li class="l-header__item dm-mono">
+          <a class="l-header__item-link" href="works.html">works</a>
+        </li>
+        <li class="l-header__item dm-mono">
+          <a class="l-header__item-link" href="about.html">about</a>
+        </li>
+        <li class="l-header__item dm-mono">
+          <a class="l-header__item-link" href="service.html">service</a>
+        </li>
+        <li class="l-header__item dm-mono">
+          <a class="l-header__item-link" href="contact.html">contact</a>
+        </li>
+      </ul>
+    </nav>
+    <button class="l-header__burger js-menu-toggle">
+      <span class="l-header__burger-bar"></span>
+      <span class="l-header__burger-bar"></span>
+    </button>
+
+    <div class="l-header__burger-content js-menu">
+      <div class="l-header__burger-header">
+        <div class="c-site-title">
+          <a class="c-site-title__link dm-mono" href="index.html">
+            yosh<span class="u-accent">i</span> code
+          </a>
+        </div>
+        <button class="l-header__burger js-menu-toggle">
+          <span class="l-header__burger-bar"></span>
+          <span class="l-header__burger-bar"></span>
+        </button>
+      </div>
+      <div class="l-header__burger-body">
+        <nav class="l-header__burger-nav">
+          <ul class="l-header__burger-menu">
+            <li class="l-header__burger-item dm-mono">
+              <a class="l-header__burger-item-link" href="index.html">top</a>
+            </li>
+            <li class="l-header__burger-item dm-mono">
+              <a class="l-header__burger-item-link" href="works.html">works</a>
+            </li>
+            <li class="l-header__burger-item dm-mono">
+              <a class="l-header__burger-item-link" href="about.html">about</a>
+            </li>
+            <li class="l-header__burger-item dm-mono">
+              <a class="l-header__burger-item-link" href="service.html">service</a>
+            </li>
+            <li class="l-header__burger-item dm-mono">
+              <a class="l-header__burger-item-link" href="contact.html">contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="l-main">
+
+    <!-- ページヘッダー -->
+    <section class="l-page-header js-mv">
+      <div class="l-inner">
+        <div class="l-page-header__content">
+          <h1 class="l-page-header__title cormorant-garamond">
+            service
+            <span class="u-accent">menu</span>
+          </h1>
+        </div>
+        <ul class="c-breadcrumb__list">
+          <li class="c-breadcrumb__item dm-mono">
+            <a class="c-breadcrumb__link" href="index.html">top</a>
+          </li>
+          <li class="c-breadcrumb__item dm-mono">
+            service
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- サービス一覧 -->
+    <section class="p-service">
+      <div class="l-inner">
+        <ul class="p-service__list">
+          <li id="coding" class="p-service__item u-fade-up js-fade">
+            <div class="p-service__card">
+              <div class="p-service__card-head">
+                <span class="p-service__num dm-mono">01</span>
+                <h2 class="p-service__title cormorant-garamond">Coding</h2>
+              </div>
+              <div class="p-service__card-body">
+                <p class="c-text">
+                  FigmaやXDなどのデザインカンプをもとに、HTML / CSS / JavaScriptでコーディングします。BEM設計と保守性を意識した実装で、納品後の運用・修正もしやすい構造を心がけています。
+                </p>
+                <ul class="p-service__detail-list">
+                  <li class="p-service__detail-item dm-mono">デザインカンプからのコーディング</li>
+                  <li class="p-service__detail-item dm-mono">レスポンシブ対応</li>
+                  <li class="p-service__detail-item dm-mono">アニメーション・インタラクション実装</li>
+                  <li class="p-service__detail-item dm-mono">SCSS / BEM設計</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li id="wordpress" class="p-service__item u-fade-up js-fade">
+            <div class="p-service__card">
+              <div class="p-service__card-head">
+                <span class="p-service__num dm-mono">02</span>
+                <h2 class="p-service__title cormorant-garamond">WordPress</h2>
+              </div>
+              <div class="p-service__card-body">
+                <p class="c-text">
+                  オリジナルテーマの構築から、カスタムフィールド・カスタム投稿タイプの実装まで対応します。クライアントが更新しやすい設計を意識し、運用負荷を軽減する構築を行います。
+                </p>
+                <ul class="p-service__detail-list">
+                  <li class="p-service__detail-item dm-mono">オリジナルテーマ構築</li>
+                  <li class="p-service__detail-item dm-mono">カスタムフィールド実装</li>
+                  <li class="p-service__detail-item dm-mono">カスタム投稿タイプ設定</li>
+                  <li class="p-service__detail-item dm-mono">既存テーマのカスタマイズ</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li id="sitefix" class="p-service__item u-fade-up js-fade">
+            <div class="p-service__card">
+              <div class="p-service__card-head">
+                <span class="p-service__num dm-mono">03</span>
+                <h2 class="p-service__title cormorant-garamond">Site Fix</h2>
+              </div>
+              <div class="p-service__card-body">
+                <p class="c-text">
+                  テキスト変更・レイアウト崩れの修正・機能追加など、既存サイトへの改修にも対応します。WordPressサイトの修正や、部分的なJavaScript実装なども承ります。
+                </p>
+                <ul class="p-service__detail-list">
+                  <li class="p-service__detail-item dm-mono">テキスト・画像の変更</li>
+                  <li class="p-service__detail-item dm-mono">レイアウト崩れの修正</li>
+                  <li class="p-service__detail-item dm-mono">機能追加・改修</li>
+                  <li class="p-service__detail-item dm-mono">表示速度の改善</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- price -->
+    <section class="p-service__price">
+      <div class="l-inner">
+        <h2 class="c-title cormorant-garamond">
+          price
+          <span class="c-title__line"></span>
+        </h2>
+        <p class="c-text p-service__price-read">
+          以下はあくまで参考価格です。ページの複雑さや機能・工数によって変動しますので、まずはお気軽にご相談ください。
+        </p>
+
+        <div class="p-service__price-content">
+          <ul class="p-service__price-list">
+            <li class="p-service__price-item u-fade-up js-fade js-hove">
+              <div class="p-service__price-card">
+                <h3 class="p-service__price-title dm-mono">Coding</h3>
+                <p class="p-service__price-amount dm-mono">
+                  ¥<span class="p-service__price-num">10,000</span><span class="p-service__price-unit">〜 / page</span>
+                </p>
+                <p class="c-text">
+                  デザインカンプをもとにHTML / CSS / JavaScriptでコーディングします。レスポンシブ対応・アニメーション実装も対応可能です。
+                </p>
+              </div>
+            </li>
+            <li class="p-service__price-item u-fade-up js-fade js-hove">
+              <div class="p-service__price-card">
+                <h3 class="p-service__price-title dm-mono">WordPress</h3>
+                <p class="p-service__price-amount dm-mono">
+                  ¥<span class="p-service__price-num">30,000</span><span class="p-service__price-unit">〜</span>
+                </p>
+                <p class="c-text">
+                  オリジナルテーマ構築・カスタムフィールド実装など、更新しやすいWordPressサイトを構築します。
+                </p>
+              </div>
+            </li>
+            <li class="p-service__price-item u-fade-up js-fade js-hove">
+              <div class="p-service__price-card">
+                <h3 class="p-service__price-title dm-mono">Site Fix</h3>
+                <p class="p-service__price-amount dm-mono">
+                  ¥<span class="p-service__price-num">5,000</span><span class="p-service__price-unit">〜</span>
+                </p>
+                <p class="c-text">
+                  既存サイトのテキスト修正・レイアウト崩れの対応・機能追加など、部分的な改修にも対応します。
+                </p>
+              </div>
+            </li>
+          </ul>
+
+          <p class="c-text p-service__price-note">
+            ※表示価格はすべて税抜きの参考価格です。<br>
+            ※案件の内容・ボリューム・納期によって変動します。詳細はお見積りにてご確認ください。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 対応の流れ -->
+    <section class="p-service__flow">
+      <div class="l-inner">
+        <h2 class="c-title cormorant-garamond">
+          flow
+          <span class="c-title__line"></span>
+        </h2>
+        <p class="c-text p-service__flow-read">
+          ご依頼からお届けまでの流れをご説明します。
+        </p>
+        <ol class="p-service__flow-list">
+          <li class="p-service__flow-item u-fade-up js-fade js-hove">
+            <div class="p-service__flow-card">
+              <span class="p-service__flow-num dm-mono">01</span>
+              <h3 class="p-service__flow-title dm-mono">お問い合わせ</h3>
+              <p class="c-text">
+                まずはお気軽にお問い合わせフォームよりご連絡ください。案件の概要・納期・ご予算などをお聞かせいただければスムーズです。
+              </p>
+            </div>
+          </li>
+          <li class="p-service__flow-item u-fade-up js-fade js-hove">
+            <div class="p-service__flow-card">
+              <span class="p-service__flow-num dm-mono">02</span>
+              <h3 class="p-service__flow-title dm-mono">ヒアリング・お見積り</h3>
+              <p class="c-text">
+                ご要件を詳しくお聞きし、お見積りをご提示します。デザインカンプやワイヤーフレームがあればご共有ください。
+              </p>
+            </div>
+          </li>
+          <li class="p-service__flow-item u-fade-up js-fade js-hove">
+            <div class="p-service__flow-card">
+              <span class="p-service__flow-num dm-mono">03</span>
+              <h3 class="p-service__flow-title dm-mono">制作・実装</h3>
+              <p class="c-text">
+                ご発注後、制作をスタートします。進捗はこまめに共有し、認識のズレが生じないよう丁寧にコミュニケーションをとりながら進めます。
+              </p>
+            </div>
+          </li>
+          <li class="p-service__flow-item u-fade-up js-fade js-hove">
+            <div class="p-service__flow-card">
+              <span class="p-service__flow-num dm-mono">04</span>
+              <h3 class="p-service__flow-title dm-mono">確認・修正</h3>
+              <p class="c-text">
+                納品前に確認いただき、修正がある場合は対応します。細部までご確認いただけるよう、丁寧にフィードバックをお待ちしています。
+              </p>
+            </div>
+          </li>
+          <li class="p-service__flow-item u-fade-up js-fade js-hove">
+            <div class="p-service__flow-card">
+              <span class="p-service__flow-num dm-mono">05</span>
+              <h3 class="p-service__flow-title dm-mono">納品</h3>
+              <p class="c-text">
+                最終確認後、納品となります。納品後も気になる点があればお気軽にご相談ください。
+              </p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- よくある質問 -->
+    <section class="p-service__faq">
+      <div class="l-inner">
+        <h2 class="c-title cormorant-garamond">
+          faq
+          <span class="c-title__line"></span>
+        </h2>
+        <dl class="p-service__faq-list">
+          <div class="p-service__faq-item u-fade-up js-fade">
+            <dt class="p-service__faq-q dm-mono js-accordion-trigger js-hove">
+              <span>デザインなしでも依頼できますか？</span>
+              <span class="p-service__faq-icon"></span>
+            </dt>
+            <dd class="p-service__faq-a">
+              <p class="c-text">
+                基本的にはデザインカンプ（FigmaやXDなど）をご用意いただいた上でのコーディングが中心となります。デザインの用意が難しい場合はご相談ください。
+              </p>
+            </dd>
+          </div>
+          <div class="p-service__faq-item u-fade-up js-fade">
+            <dt class="p-service__faq-q dm-mono js-accordion-trigger js-hove">
+              <span>納期はどのくらいですか？</span>
+              <span class="p-service__faq-icon"></span>
+            </dt>
+            <dd class="p-service__faq-a">
+              <p class="c-text">
+                案件の規模や内容によって異なります。まずはお問い合わせいただき、ご要件をお聞かせください。可能な限りご希望の納期に沿えるよう対応いたします。
+              </p>
+            </dd>
+          </div>
+          <div class="p-service__faq-item u-fade-up js-fade">
+            <dt class="p-service__faq-q dm-mono js-accordion-trigger js-hove">
+              <span>修正対応はしてもらえますか？</span>
+              <span class="p-service__faq-icon"></span>
+            </dt>
+            <dd class="p-service__faq-a">
+              <p class="c-text">
+                納品前の修正は対応しております。納品後の追加修正については、内容に応じて別途ご相談させていただく場合があります。
+              </p>
+            </dd>
+          </div>
+          <div class="p-service__faq-item u-fade-up js-fade">
+            <dt class="p-service__faq-q dm-mono js-accordion-trigger js-hove">
+              <span>制作会社からのコーディング依頼は受けていますか？</span>
+              <span class="p-service__faq-icon"></span>
+            </dt>
+            <dd class="p-service__faq-a">
+              <p class="c-text">
+                はい、制作会社様のコーディングパートナーとしての対応を歓迎しています。継続的なお取引も大歓迎ですので、お気軽にご相談ください。
+              </p>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- フッター -->
+  <footer class="l-footer">
+    <div class="c-cta">
+      <div class="l-inner">
+        <div class="c-cta__content u-fade-up js-fade">
+          <p class="c-text">
+            制作会社様のコーディングパートナーとして<br>
+            HTML / CSS / JavaScript / WordPress のコーディング業務をサポートしています。
+          </p>
+          <p class="c-text">
+            案件のご相談などお気軽にお問い合わせください。
+          </p>
+          <div class="c-cta__btn">
+            <a class="c-cta__btn-link dm-mono" href="contact.html">
+              Contact
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="l-inner">
+      <div class="l-footer__content">
+        <div class="c-site-title">
+          <a class="c-site-title__link dm-mono" href="index.html">
+            yosh<span class="u-accent">i</span> code
+          </a>
+        </div>
+        <nav class="l-footer__nav">
+          <ul class="l-footer__menu">
+            <li class="l-footer__item dm-mono">
+              <a class="l-footer__item-link" href="index.html">top</a>
+            </li>
+            <li class="l-footer__item dm-mono">
+              <a class="l-footer__item-link" href="works.html">works</a>
+            </li>
+            <li class="l-footer__item dm-mono">
+              <a class="l-footer__item-link" href="about.html">about</a>
+            </li>
+            <li class="l-footer__item dm-mono">
+              <a class="l-footer__item-link" href="service.html">service</a>
+            </li>
+            <li class="l-footer__item l-footer__item-cta dm-mono">
+              <a class="l-footer__item-link" href="contact.html">contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="l-footer__copyright">
+      <p class="l-footer__copyright-text">
+        Copyright 2026 Yoshi Code
+      </p>
+    </div>
+  </footer>
+
+<script src="asset/js/main.js"></script>
+</body>
+</html>

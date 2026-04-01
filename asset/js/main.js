@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
   initBurgerMenu();
   initHeader()
   initFadeInAnimations();
+  initAccordion();
 });
 
 // カスタムカーソル
@@ -138,4 +139,26 @@ function initFadeInAnimations() {
   }, options);
 
   fadeElements.forEach(el => observer.observe(el));
+}
+
+// アコーディオン
+function initAccordion() {
+  const triggers = document.querySelectorAll(".js-accordion-trigger");
+  if (!triggers.length) return;
+
+  triggers.forEach(trigger => {
+    trigger.addEventListener("click", () => {
+      const body = trigger.nextElementSibling;
+      const isOpen = trigger.classList.contains("is-open");
+
+      // 他を閉じる（1つだけ開く場合）
+      // triggers.forEach(t => {
+      //   t.classList.remove("is-open");
+      //   t.nextElementSibling.classList.remove("is-open");
+      // });
+
+      trigger.classList.toggle("is-open", !isOpen);
+      body.classList.toggle("is-open", !isOpen);
+    });
+  });
 }
