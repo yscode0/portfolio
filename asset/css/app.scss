@@ -19,12 +19,14 @@
 @use "object/component/c-works";
 @use "object/component/c-cta";
 @use "object/component/c-breadcrumb";
+@use "object/component/c-skill-tag";
 
 //project
 @use "object/project/p-mv";
 @use "object/project/p-top";
 @use "object/project/p-archive";
 @use "object/project/p-work";
+@use "object/project/p-about";
 
 //utility
 @use "object/utility/u-fade-up";

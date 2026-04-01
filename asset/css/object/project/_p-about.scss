@@ -1,0 +1,225 @@
+@use "./../../foundation/_mixin.scss" as mx;
+
+
+.p-about {
+  padding: 120px 0;
+  @include mx.breakpoint(tablet) {
+    padding: 80px 0;
+  }
+
+  // profile
+  &__profile {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 72px;
+    max-width: 1080px;
+    margin: 0 auto;
+    @include mx.breakpoint(note) {
+      gap: 40px;
+    }
+    @include mx.breakpoint(tablet) {
+      grid-template-columns: 220px 1fr;
+    }
+    @include mx.breakpoint(sp) {
+      grid-template-columns: 1fr;
+    }
+  }
+  &__img {
+    margin: 0;
+    width: 100%;
+    max-width: 320px;
+    @include mx.breakpoint(sp) {
+      margin: 0 auto;
+    }
+    img {
+      border-radius: 50%;
+      width: 100%;
+      aspect-ratio: 1;
+    }
+  }
+  &__caption {
+    margin-top: 12px;
+  }
+  &__name {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: .05em;
+    text-align: center;
+  }
+  &__role {
+    margin: 0;
+    font-size: 1.125rem;
+    letter-spacing: 0;
+    text-align: center;
+    color: var(--text-accent);
+  }
+  &__info {
+    .c-title__page {
+      margin-bottom: 32px;
+    }
+    .c-text + .c-text {
+      margin-top: 24px;
+    }
+  }
+
+  // meta
+  &__meta {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 16px 20px;
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(62, 68, 70, 0.2);
+    @include mx.breakpoint(sp) {
+      margin-top: 32px;
+      padding-top: 32px;
+    }
+  }
+  &__term {
+    font-size: .875rem;
+    font-weight: 500;
+    letter-spacing: 0;
+    color: var(--text-accent);
+    text-transform: capitalize;
+  }
+  &__desc {
+    margin: 0;
+    font-size: .875rem;
+    letter-spacing: .05em;
+    color: var(--text);
+  }
+
+  // skill
+  &__skill {
+    padding: 120px 0;
+    background-color: var(--color-dark);
+    @include mx.breakpoint(tablet) {
+      padding: 80px 0;
+    }
+    .c-title {
+      color: var(--text-light);
+      &__line {
+        background-color: var(--color-cream);
+      }
+    }
+  }
+  &__skill-content {
+    margin-top: 72px;
+    @include mx.breakpoint(tablet) {
+      margin-top: 56px;
+    }
+  }
+  &__skill-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    @include mx.breakpoint(sp) {
+      grid-template-columns: 1fr;
+    }
+  }
+  &__skill-card {
+    padding: 40px;
+    background-color: rgba(255, 253, 243, 0.05);
+    transition: background-color 0.3s;
+    @include mx.breakpoint(note) {
+      padding: 32px;
+    }
+    @include mx.breakpoint(sp) {
+      padding: 24px 20px;
+    }
+    @include mx.hover {
+      background-color: rgba(207, 161, 82, 0.1);
+    }
+    .c-text {
+      color: var(--text-light);
+      opacity: .7;
+    }
+  }
+  &__skill-num {
+    display: block;
+    font-size: .875rem;
+    letter-spacing: .05em;
+    color: var(--text-accent);
+    margin-bottom: 12px;
+  }
+  &__skill-title {
+    margin: 0 0 16px;
+    font-size: 1.25rem;
+    font-weight: 500;
+    letter-spacing: .05em;
+    color: var(--text-light);
+  }
+  &__skill-tags {
+    margin-top: 56px;
+    .c-skill-tag__item {
+      border: 1px solid rgba(255, 253, 243, 0.3);
+      color: var(--text-light);
+      @include mx.hover {
+        opacity: 1;
+        border: 1px solid var(--color-gold);
+        &::before {
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
+
+  // history
+  &__history {
+    padding: 120px 0 0;
+    @include mx.breakpoint(tablet) {
+      padding: 80px 0 0;
+    }
+  }
+  &__history-content {
+    max-width: 800px;
+    margin: 72px auto 0;
+    @include mx.breakpoint(tablet) {
+      margin: 56px auto 0;
+    }
+  }
+  &__history-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  &__history-item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 0 40px;
+    padding: 40px 0;
+    border-bottom: 1px solid rgba(62, 68, 70, 0.2);
+    @include mx.breakpoint(sp) {
+      grid-template-columns: 56px 1fr;
+      gap: 0 20px;
+      padding: 32px 0;
+    }
+    &:first-child {
+      border-top: 1px solid rgba(62, 68, 70, 0.2);
+    }
+  }
+  &__history-year {
+    display: block;
+    padding-top: 4px;
+    font-size: .875rem;
+    letter-spacing: .05em;
+    color: var(--text-accent);
+    white-space: nowrap;
+  }
+  &__history-title {
+    margin: 0 0 12px;
+    font-size: 1.125rem;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: .05em;
+    color: var(--text);
+    @include mx.breakpoint(sp) {
+      font-size: 1rem;
+    }
+  }
+}

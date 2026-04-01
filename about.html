@@ -103,7 +103,7 @@
 
     <!-- ページヘッダー -->
     <section class="l-page-header js-mv">
-      <div class="inner">
+      <div class="l-inner">
         <div class="l-page-header__content">
           <h1 class="l-page-header__title cormorant-garamond">
             about
@@ -126,7 +126,7 @@
 
     <!-- プロフィール -->
     <section class="p-about">
-      <div class="inner">
+      <div class="l-inner">
         <div class="p-about__profile">
           <figure class="p-about__img u-fade-up js-fade">
             <img src="asset/images/yoshi.webp" alt="田中 克規" loading="lazy">
@@ -165,14 +165,14 @@
 
     <!-- スキル -->
     <section class="p-about__skill">
-      <div class="inner">
+      <div class="l-inner">
         <h2 class="c-title cormorant-garamond">
-          sk<span class="u-accent">i</span>ll
+          skill
           <span class="c-title__line"></span>
         </h2>
         <div class="p-about__skill-content">
           <ul class="p-about__skill-list">
-            <li class="p-about__skill-item u-fade-up js-fade">
+            <li class="p-about__skill-item u-fade-up js-fade js-hove">
               <div class="p-about__skill-card">
                 <span class="p-about__skill-num dm-mono">01</span>
                 <h3 class="p-about__skill-title dm-mono">HTML / CSS</h3>
@@ -181,7 +181,7 @@
                 </p>
               </div>
             </li>
-            <li class="p-about__skill-item u-fade-up js-fade">
+            <li class="p-about__skill-item u-fade-up js-fade js-hove">
               <div class="p-about__skill-card">
                 <span class="p-about__skill-num dm-mono">02</span>
                 <h3 class="p-about__skill-title dm-mono">JavaScript</h3>
@@ -190,7 +190,7 @@
                 </p>
               </div>
             </li>
-            <li class="p-about__skill-item u-fade-up js-fade">
+            <li class="p-about__skill-item u-fade-up js-fade js-hove">
               <div class="p-about__skill-card">
                 <span class="p-about__skill-num dm-mono">03</span>
                 <h3 class="p-about__skill-title dm-mono">WordPress</h3>
@@ -199,7 +199,7 @@
                 </p>
               </div>
             </li>
-            <li class="p-about__skill-item u-fade-up js-fade">
+            <li class="p-about__skill-item u-fade-up js-fade js-hove">
               <div class="p-about__skill-card">
                 <span class="p-about__skill-num dm-mono">04</span>
                 <h3 class="p-about__skill-title dm-mono">Figma</h3>
@@ -213,16 +213,16 @@
 
         <!-- スキルタグ -->
         <div class="p-about__skill-tags u-fade-up js-fade">
-          <ul class="p-about__tag-list">
-            <li class="p-about__tag-item dm-mono">HTML5</li>
-            <li class="p-about__tag-item dm-mono">CSS3</li>
-            <li class="p-about__tag-item dm-mono">Sass / SCSS</li>
-            <li class="p-about__tag-item dm-mono">JavaScript</li>
-            <li class="p-about__tag-item dm-mono">jQuery</li>
-            <li class="p-about__tag-item dm-mono">WordPress</li>
-            <li class="p-about__tag-item dm-mono">Figma</li>
-            <li class="p-about__tag-item dm-mono">Git / GitHub</li>
-            <li class="p-about__tag-item dm-mono">VSCode</li>
+          <ul class="c-skill-tag__list">
+            <li class="c-skill-tag__item dm-mono js-hove">HTML5</li>
+            <li class="c-skill-tag__item dm-mono js-hove">CSS3</li>
+            <li class="c-skill-tag__item dm-mono js-hove">Sass / SCSS</li>
+            <li class="c-skill-tag__item dm-mono js-hove">JavaScript</li>
+            <li class="c-skill-tag__item dm-mono js-hove">jQuery</li>
+            <li class="c-skill-tag__item dm-mono js-hove">WordPress</li>
+            <li class="c-skill-tag__item dm-mono js-hove">Figma</li>
+            <li class="c-skill-tag__item dm-mono js-hove">Git / GitHub</li>
+            <li class="c-skill-tag__item dm-mono js-hove">VSCode</li>
           </ul>
         </div>
       </div>
@@ -230,39 +230,51 @@
 
     <!-- 経歴 -->
     <section class="p-about__history">
-      <div class="inner">
+      <div class="l-inner">
         <h2 class="c-title cormorant-garamond">
-          h<span class="u-accent">i</span>story
+          history
           <span class="c-title__line"></span>
         </h2>
         <div class="p-about__history-content">
           <ol class="p-about__history-list">
             <li class="p-about__history-item u-fade-up js-fade">
-              <span class="p-about__history-year dm-mono">2020</span>
+              <span class="p-about__history-year dm-mono">2023.01</span>
               <div class="p-about__history-body">
-                <h3 class="p-about__history-title">Web制作に独学で入門</h3>
-                <p class="c-text">HTML / CSS を独学で学び始める。書籍やオンライン教材をもとに基礎を習得。</p>
+                <h3 class="p-about__history-title">Web技術を体系的に学ぶ</h3>
+                <p class="c-text">
+                  HTML / CSS / JavaScript / PHP / Python / Java・データベース・Git など、
+                  Web制作に必要な技術を体系的に学習。開発の基礎から実践的なスキルを習得する。
+                </p>
               </div>
             </li>
             <li class="p-about__history-item u-fade-up js-fade">
-              <span class="p-about__history-year dm-mono">2021</span>
+              <span class="p-about__history-year dm-mono">2023.07</span>
               <div class="p-about__history-body">
-                <h3 class="p-about__history-title">JavaScript・WordPressの学習開始</h3>
-                <p class="c-text">バニラJSやWordPressのオリジナルテーマ構築を学び、実装の幅を広げる。</p>
+                <h3 class="p-about__history-title">美容室・求人サイトの制作・運用を受託</h3>
+                <p class="c-text">
+                  美容室のWeb管理および新規求人サイトの制作を受託。
+                  サイト設計から公開後の運用・更新まで一貫して担当し、現在も継続中。
+                </p>
               </div>
             </li>
             <li class="p-about__history-item u-fade-up js-fade">
-              <span class="p-about__history-year dm-mono">2022</span>
+              <span class="p-about__history-year dm-mono">2024.10</span>
               <div class="p-about__history-body">
-                <h3 class="p-about__history-title">制作会社でのコーディング業務開始</h3>
-                <p class="c-text">副業としてコーポレートサイトや店舗サイトのコーディングを担当。実務経験を積む。</p>
+                <h3 class="p-about__history-title">Web制作案件の受注を開始</h3>
+                <p class="c-text">
+                  クラウドソーシングにてWeb制作案件の受注をスタート。
+                  以降、継続的に依頼をいただき、コーポレートサイトや店舗サイトなど10数件を対応。
+                </p>
               </div>
             </li>
             <li class="p-about__history-item u-fade-up js-fade">
-              <span class="p-about__history-year dm-mono">2024</span>
+              <span class="p-about__history-year dm-mono">2026</span>
               <div class="p-about__history-body">
-                <h3 class="p-about__history-title">フリーランスとして独立</h3>
-                <p class="c-text">フリーランスWebコーダーとして独立。制作会社様のコーディングパートナーとして複数の案件に携わる。</p>
+                <h3 class="p-about__history-title">フリーランスWebコーダーとして活動中</h3>
+                <p class="c-text">
+                  これまでの実績を活かし、制作会社様のコーディングパートナーとして活動。
+                  丁寧なコミュニケーションと安定した実装で、長くお付き合いいただけるパートナーを目指しています。
+                </p>
               </div>
             </li>
           </ol>
@@ -275,7 +287,7 @@
   <!-- フッター -->
   <footer class="l-footer">
     <div class="c-cta">
-      <div class="inner">
+      <div class="l-inner">
         <div class="c-cta__content u-fade-up js-fade">
           <p class="c-text">
             制作会社様のコーディングパートナーとして<br>
@@ -292,7 +304,7 @@
         </div>
       </div>
     </div>
-    <div class="inner">
+    <div class="l-inner">
       <div class="l-footer__content">
         <div class="c-site-title">
           <a class="c-site-title__link dm-mono" href="index.html">
