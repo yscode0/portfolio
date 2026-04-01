@@ -58,17 +58,16 @@
     font-size: .875rem;
     letter-spacing: .05em;
     color: var(--text-accent);
-    margin-bottom: 16px;
-    @include mx.breakpoint(tablet) {
-      margin-bottom: 0;
-    }
   }
   &__title {
-    margin: 0;
+    margin: 16px 0 0 0;
     font-size: clamp(2rem, 3vw, 3rem);
     font-weight: 400;
     letter-spacing: 0;
     color: var(--text-light);
+    @include mx.breakpoint(tablet) {
+      margin: 0;
+    }
   }
   &__card-body {
     padding-top: 8px;
@@ -147,14 +146,9 @@
     @include mx.hover {
       background-color: rgba(62, 68, 70, 0.85);
     }
-    .c-text {
-      color: var(--text-light);
-      opacity: .6;
-      margin-top: 20px;
-    }
   }
   &__price-title {
-    margin: 0 0 24px;
+    margin: 0;
     font-size: 1.25rem;
     font-weight: 500;
     letter-spacing: .05em;
@@ -162,6 +156,14 @@
     opacity: .7;
     padding-bottom: 24px;
     border-bottom: 1px solid rgba(255, 253, 243, 0.15);
+  }
+  &__price-info {
+    margin-top: 24px;
+    .c-text {
+      color: var(--text-light);
+      opacity: .6;
+      margin-top: 20px;
+    }
   }
   &__price-amount {
     margin: 0;
@@ -245,16 +247,18 @@
     @include mx.hover {
       background-color: rgba(207, 161, 82, 0.08);
     }
+    .c-text {
+      margin-top: 16px;
+    }
   }
   &__flow-num {
     display: block;
     font-size: .875rem;
     letter-spacing: .05em;
     color: var(--text-accent);
-    margin-bottom: 12px;
   }
   &__flow-title {
-    margin: 0 0 16px;
+    margin: 12px 0 0 0;
     font-size: 1rem;
     font-weight: 500;
     letter-spacing: .05em;

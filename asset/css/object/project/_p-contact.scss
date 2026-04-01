@@ -14,28 +14,28 @@
 
   // lead
   &__lead {
-    margin-bottom: 64px;
-    @include mx.breakpoint(sp) {
-      margin-bottom: 48px;
-    }
     .c-text {
       line-height: 2;
     }
   }
-
-  // form
-  &__form {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+  &__form-content {
+    margin-top: 64px;
     @include mx.breakpoint(sp) {
-      gap: 32px;
+      margin-top: 48px;
     }
   }
+
+  // form
   &__field {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    & + & {
+      margin-top: 40px;
+      @include mx.breakpoint(sp) {
+        margin-top: 32px;
+      }
+    }
   }
   &__label {
     display: flex;
@@ -130,7 +130,7 @@
 
   // privacy
   &__privacy {
-    margin-top: -8px;
+    margin-top: 32px;
   }
   &__privacy-label {
     display: flex;
@@ -187,7 +187,7 @@
   // submit
   &__submit {
     text-align: center;
-    margin-top: 8px;
+    margin-top: 48px;
   }
   &__submit-btn {
     position: relative;

@@ -55,10 +55,8 @@
     text-align: center;
     color: var(--text-accent);
   }
-  &__info {
-    .c-title__page {
-      margin-bottom: 32px;
-    }
+  &__info-texts {
+    margin-top: 32px;
     .c-text + .c-text {
       margin-top: 24px;
     }
@@ -69,12 +67,12 @@
     display: grid;
     grid-template-columns: 60px 1fr;
     gap: 16px 20px;
-    margin-top: 40px;
-    padding-top: 40px;
+    margin: 40px 0 0 0;
+    padding: 40px 0 0 0;
     border-top: 1px solid rgba(62, 68, 70, 0.2);
     @include mx.breakpoint(sp) {
-      margin-top: 32px;
-      padding-top: 32px;
+      margin: 32px 0 0 0;
+      padding: 32px 0 0 0;
     }
   }
   &__term {
@@ -136,6 +134,7 @@
       background-color: rgba(207, 161, 82, 0.1);
     }
     .c-text {
+      margin-top: 16px;
       color: var(--text-light);
       opacity: .7;
     }
@@ -145,10 +144,9 @@
     font-size: .875rem;
     letter-spacing: .05em;
     color: var(--text-accent);
-    margin-bottom: 12px;
   }
   &__skill-title {
-    margin: 0 0 16px;
+    margin: 12px 0 0 0;
     font-size: 1.25rem;
     font-weight: 500;
     letter-spacing: .05em;
@@ -211,8 +209,13 @@
     color: var(--text-accent);
     white-space: nowrap;
   }
+  &__history-body {
+    .c-text {
+      margin-top: 12px;
+    }
+  }
   &__history-title {
-    margin: 0 0 12px;
+    margin: 0;
     font-size: 1.125rem;
     font-weight: 500;
     line-height: 1.4;

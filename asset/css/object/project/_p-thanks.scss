@@ -1,0 +1,95 @@
+@use "./../../foundation/_mixin.scss" as mx;
+
+.p-thanks {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding: 120px 0;
+  border-bottom: 1px solid rgba(62, 68, 70, 0.2);
+  @include mx.breakpoint(tablet) {
+    padding: 80px 0;
+  }
+
+  &__content {
+    .c-text {
+      margin-top: 40px;
+      @include mx.breakpoint(sp) {
+        margin-top: 32px;
+      }
+    }
+  }
+
+  &__label {
+    margin: 0;
+    font-size: .875rem;
+    letter-spacing: .3em;
+    color: var(--text-accent);
+    text-transform: uppercase;
+  }
+
+  &__title {
+    margin: 24px 0 0 0;
+    font-size: clamp(1.875rem, 6vw, 5rem);
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: .05em;
+    color: var(--text);
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-top: 56px;
+    @include mx.breakpoint(sp) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
+      margin-top: 40px;
+    }
+  }
+
+  &__nav-link {
+    position: relative;
+    display: inline-block;
+    padding: 14px 80px 14px 0;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: .05em;
+    text-decoration: none;
+    color: var(--text);
+    transition: .3s;
+    @include mx.hover {
+      &::before {
+        width: 52px;
+      }
+      &::after {
+        right: 20px;
+      }
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      width: 48px;
+      aspect-ratio: 1;
+      border: 1px solid #333;
+      border-radius: 50%;
+      transition: .3s;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 24px;
+      transform: translateY(-50%) skewX(50deg);
+      width: 48px;
+      height: 6px;
+      border-bottom: 1px solid #333;
+      border-right: 1px solid #333;
+      transition: .3s;
+    }
+  }
+}

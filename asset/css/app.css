@@ -2288,24 +2288,24 @@ body.is-hove .c-cursor__ring {
   text-align: center;
   color: var(--text-accent);
 }
-.p-about__info .c-title__page {
-  margin-bottom: 32px;
+.p-about__info-texts {
+  margin-top: 32px;
 }
-.p-about__info .c-text + .c-text {
+.p-about__info-texts .c-text + .c-text {
   margin-top: 24px;
 }
 .p-about__meta {
   display: grid;
   grid-template-columns: 60px 1fr;
   gap: 16px 20px;
-  margin-top: 40px;
-  padding-top: 40px;
+  margin: 40px 0 0 0;
+  padding: 40px 0 0 0;
   border-top: 1px solid rgba(62, 68, 70, 0.2);
 }
 @media (max-width: 599px) {
   .p-about__meta {
-    margin-top: 32px;
-    padding-top: 32px;
+    margin: 32px 0 0 0;
+    padding: 32px 0 0 0;
   }
 }
 .p-about__term {
@@ -2378,6 +2378,7 @@ body.is-hove .c-cursor__ring {
   }
 }
 .p-about__skill-card .c-text {
+  margin-top: 16px;
   color: var(--text-light);
   opacity: 0.7;
 }
@@ -2386,10 +2387,9 @@ body.is-hove .c-cursor__ring {
   font-size: 0.875rem;
   letter-spacing: 0.05em;
   color: var(--text-accent);
-  margin-bottom: 12px;
 }
 .p-about__skill-title {
-  margin: 0 0 16px;
+  margin: 12px 0 0 0;
   font-size: 1.25rem;
   font-weight: 500;
   letter-spacing: 0.05em;
@@ -2458,8 +2458,11 @@ body.is-hove .c-cursor__ring {
   color: var(--text-accent);
   white-space: nowrap;
 }
+.p-about__history-body .c-text {
+  margin-top: 12px;
+}
 .p-about__history-title {
-  margin: 0 0 12px;
+  margin: 0;
   font-size: 1.125rem;
   font-weight: 500;
   line-height: 1.4;
@@ -2541,19 +2544,18 @@ body.is-hove .c-cursor__ring {
   font-size: 0.875rem;
   letter-spacing: 0.05em;
   color: var(--text-accent);
-  margin-bottom: 16px;
-}
-@media (max-width: 768px) {
-  .p-service__num {
-    margin-bottom: 0;
-  }
 }
 .p-service__title {
-  margin: 0;
+  margin: 16px 0 0 0;
   font-size: clamp(2rem, 3vw, 3rem);
   font-weight: 400;
   letter-spacing: 0;
   color: var(--text-light);
+}
+@media (max-width: 768px) {
+  .p-service__title {
+    margin: 0;
+  }
 }
 .p-service__card-body {
   padding-top: 8px;
@@ -2645,13 +2647,8 @@ body.is-hove .c-cursor__ring {
     background-color: rgba(62, 68, 70, 0.85);
   }
 }
-.p-service__price-card .c-text {
-  color: var(--text-light);
-  opacity: 0.6;
-  margin-top: 20px;
-}
 .p-service__price-title {
-  margin: 0 0 24px;
+  margin: 0;
   font-size: 1.25rem;
   font-weight: 500;
   letter-spacing: 0.05em;
@@ -2659,6 +2656,14 @@ body.is-hove .c-cursor__ring {
   opacity: 0.7;
   padding-bottom: 24px;
   border-bottom: 1px solid rgba(255, 253, 243, 0.15);
+}
+.p-service__price-info {
+  margin-top: 24px;
+}
+.p-service__price-info .c-text {
+  color: var(--text-light);
+  opacity: 0.6;
+  margin-top: 20px;
 }
 .p-service__price-amount {
   margin: 0;
@@ -2755,15 +2760,17 @@ body.is-hove .c-cursor__ring {
     background-color: rgba(207, 161, 82, 0.08);
   }
 }
+.p-service__flow-card .c-text {
+  margin-top: 16px;
+}
 .p-service__flow-num {
   display: block;
   font-size: 0.875rem;
   letter-spacing: 0.05em;
   color: var(--text-accent);
-  margin-bottom: 12px;
 }
 .p-service__flow-title {
-  margin: 0 0 16px;
+  margin: 12px 0 0 0;
   font-size: 1rem;
   font-weight: 500;
   letter-spacing: 0.05em;
@@ -2884,31 +2891,29 @@ body.is-hove .c-cursor__ring {
   max-width: 800px;
   margin: 0 auto;
 }
-.p-contact__lead {
-  margin-bottom: 64px;
-}
-@media (max-width: 599px) {
-  .p-contact__lead {
-    margin-bottom: 48px;
-  }
-}
 .p-contact__lead .c-text {
   line-height: 2;
 }
-.p-contact__form {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
+.p-contact__form-content {
+  margin-top: 64px;
 }
 @media (max-width: 599px) {
-  .p-contact__form {
-    gap: 32px;
+  .p-contact__form-content {
+    margin-top: 48px;
   }
 }
 .p-contact__field {
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+.p-contact__field + .p-contact__field {
+  margin-top: 40px;
+}
+@media (max-width: 599px) {
+  .p-contact__field + .p-contact__field {
+    margin-top: 32px;
+  }
 }
 .p-contact__label {
   display: flex;
@@ -2997,7 +3002,7 @@ body.is-hove .c-cursor__ring {
   color: var(--text);
 }
 .p-contact__privacy {
-  margin-top: -8px;
+  margin-top: 32px;
 }
 .p-contact__privacy-label {
   display: flex;
@@ -3054,7 +3059,7 @@ body.is-hove .c-cursor__ring {
 }
 .p-contact__submit {
   text-align: center;
-  margin-top: 8px;
+  margin-top: 48px;
 }
 .p-contact__submit-btn {
   position: relative;
@@ -3098,6 +3103,99 @@ body.is-hove .c-cursor__ring {
   transform-origin: left;
   transition: transform 0.3s;
   z-index: -1;
+}
+
+.p-thanks {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding: 120px 0;
+  border-bottom: 1px solid rgba(62, 68, 70, 0.2);
+}
+@media (max-width: 768px) {
+  .p-thanks {
+    padding: 80px 0;
+  }
+}
+.p-thanks__content .c-text {
+  margin-top: 40px;
+}
+@media (max-width: 599px) {
+  .p-thanks__content .c-text {
+    margin-top: 32px;
+  }
+}
+.p-thanks__label {
+  margin: 0;
+  font-size: 0.875rem;
+  letter-spacing: 0.3em;
+  color: var(--text-accent);
+  text-transform: uppercase;
+}
+.p-thanks__title {
+  margin: 24px 0 0 0;
+  font-size: clamp(1.875rem, 6vw, 5rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+  color: var(--text);
+}
+.p-thanks__nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-top: 56px;
+}
+@media (max-width: 599px) {
+  .p-thanks__nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    margin-top: 40px;
+  }
+}
+.p-thanks__nav-link {
+  position: relative;
+  display: inline-block;
+  padding: 14px 80px 14px 0;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  color: var(--text);
+  transition: 0.3s;
+}
+@media (hover: hover) and (pointer: fine) {
+  .p-thanks__nav-link:hover::before {
+    width: 52px;
+  }
+  .p-thanks__nav-link:hover::after {
+    right: 20px;
+  }
+}
+.p-thanks__nav-link::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 48px;
+  aspect-ratio: 1;
+  border: 1px solid #333;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+.p-thanks__nav-link::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  transform: translateY(-50%) skewX(50deg);
+  width: 48px;
+  height: 6px;
+  border-bottom: 1px solid #333;
+  border-right: 1px solid #333;
+  transition: 0.3s;
 }
 
 .u-fade-up {
