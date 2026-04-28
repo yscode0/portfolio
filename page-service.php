@@ -1,102 +1,4 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>YOSHI CODE | Service</title>
-  <meta name="description" content="YOSHI CODE | Yoshinori Tanaka">
-  <meta name="keywords" content="YOSHI CODE | Yoshinori Tanaka">
-  <link rel="stylesheet" href="asset/css/app.css" />
-  <link rel="shortcut icon" href="img/favicon.ico">
-
-  <!-- Googleフォント -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
-
-  <!-- OGP設定　記載必要 -->
-  <meta property="og:url" content="" />
-  <meta property="og:image" content="" />
-  <meta property="og:site_name" content="YOSHI CODE | Yoshinori Tanaka" />
-  <meta property="og:title" content="YOSHI CODE | Service" />
-  <meta property="og:description" content="YOSHI CODE | Yoshinori Tanaka" />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
-</head>
-<body>
-  <!-- カスタムカーソル -->
-  <div class="c-cursor js-cursor"></div>
-  <div class="c-cursor__ring js-cursor-ring"></div>
-
-  <!-- ヘッダー -->
-  <header class="l-header js-header">
-    <div class="c-site-title">
-      <a class="c-site-title__link dm-mono" href="index.html">
-        yosh<span class="u-accent">i</span> code
-      </a>
-    </div>
-    <nav class="l-header__nav">
-      <ul class="l-header__menu">
-        <li class="l-header__item dm-mono">
-          <a class="l-header__item-link" href="index.html">top</a>
-        </li>
-        <li class="l-header__item dm-mono">
-          <a class="l-header__item-link" href="works.html">works</a>
-        </li>
-        <li class="l-header__item dm-mono">
-          <a class="l-header__item-link" href="about.html">about</a>
-        </li>
-        <li class="l-header__item dm-mono">
-          <a class="l-header__item-link" href="service.html">service</a>
-        </li>
-        <li class="l-header__item dm-mono">
-          <a class="l-header__item-link" href="contact.html">contact</a>
-        </li>
-      </ul>
-    </nav>
-    <button class="l-header__burger js-menu-toggle">
-      <span class="l-header__burger-bar"></span>
-      <span class="l-header__burger-bar"></span>
-    </button>
-
-    <div class="l-header__burger-content js-menu">
-      <div class="l-header__burger-header">
-        <div class="c-site-title">
-          <a class="c-site-title__link dm-mono" href="index.html">
-            yosh<span class="u-accent">i</span> code
-          </a>
-        </div>
-        <button class="l-header__burger js-menu-toggle">
-          <span class="l-header__burger-bar"></span>
-          <span class="l-header__burger-bar"></span>
-        </button>
-      </div>
-      <div class="l-header__burger-body">
-        <nav class="l-header__burger-nav">
-          <ul class="l-header__burger-menu">
-            <li class="l-header__burger-item dm-mono">
-              <a class="l-header__burger-item-link" href="index.html">top</a>
-            </li>
-            <li class="l-header__burger-item dm-mono">
-              <a class="l-header__burger-item-link" href="works.html">works</a>
-            </li>
-            <li class="l-header__burger-item dm-mono">
-              <a class="l-header__burger-item-link" href="about.html">about</a>
-            </li>
-            <li class="l-header__burger-item dm-mono">
-              <a class="l-header__burger-item-link" href="service.html">service</a>
-            </li>
-            <li class="l-header__burger-item dm-mono">
-              <a class="l-header__burger-item-link" href="contact.html">contact</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-  </header>
-
-  <main class="l-main">
+<?php get_header(); ?>
 
     <!-- ページヘッダー -->
     <section class="l-page-header js-mv">
@@ -107,14 +9,8 @@
             <span class="u-accent">menu</span>
           </h1>
         </div>
-        <ul class="c-breadcrumb__list">
-          <li class="c-breadcrumb__item dm-mono">
-            <a class="c-breadcrumb__link" href="index.html">top</a>
-          </li>
-          <li class="c-breadcrumb__item dm-mono">
-            service
-          </li>
-        </ul>
+        <!-- パンくずリスト -->
+        <?php breadcrumb(); ?>
       </div>
     </section>
 
@@ -360,64 +256,6 @@
         </dl>
       </div>
     </section>
-
+    <?php get_template_part('template-parts/cta'); ?>
   </main>
-
-  <!-- フッター -->
-  <footer class="l-footer">
-    <div class="c-cta">
-      <div class="l-inner">
-        <div class="c-cta__content u-fade-up js-fade">
-          <p class="c-text">
-            制作会社様のコーディングパートナーとして<br>
-            HTML / CSS / JavaScript / WordPress のコーディング業務をサポートしています。
-          </p>
-          <p class="c-text">
-            案件のご相談などお気軽にお問い合わせください。
-          </p>
-          <div class="c-cta__btn">
-            <a class="c-cta__btn-link dm-mono" href="contact.html">
-              Contact
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="l-inner">
-      <div class="l-footer__content">
-        <div class="c-site-title">
-          <a class="c-site-title__link dm-mono" href="index.html">
-            yosh<span class="u-accent">i</span> code
-          </a>
-        </div>
-        <nav class="l-footer__nav">
-          <ul class="l-footer__menu">
-            <li class="l-footer__item dm-mono">
-              <a class="l-footer__item-link" href="index.html">top</a>
-            </li>
-            <li class="l-footer__item dm-mono">
-              <a class="l-footer__item-link" href="works.html">works</a>
-            </li>
-            <li class="l-footer__item dm-mono">
-              <a class="l-footer__item-link" href="about.html">about</a>
-            </li>
-            <li class="l-footer__item dm-mono">
-              <a class="l-footer__item-link" href="service.html">service</a>
-            </li>
-            <li class="l-footer__item l-footer__item-cta dm-mono">
-              <a class="l-footer__item-link" href="contact.html">contact</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-    <div class="l-footer__copyright">
-      <p class="l-footer__copyright-text">
-        Copyright 2026 Yoshi Code
-      </p>
-    </div>
-  </footer>
-
-<script src="asset/js/main.js"></script>
-</body>
-</html>
+<?php get_footer(); ?>

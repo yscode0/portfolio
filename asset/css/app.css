@@ -756,22 +756,22 @@ body.is-menu-open {
 }
 
 .l-footer {
-  padding: 120px 0 0;
+  padding-top: 80px;
 }
 @media (max-width: 768px) {
   .l-footer {
-    padding: 80px 0 0;
+    padding-top: 56px;
   }
 }
 .l-footer__content {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  padding-bottom: 80px;
+  padding-bottom: 24px;
 }
 @media (max-width: 768px) {
   .l-footer__content {
-    padding-bottom: 56px;
+    padding-bottom: 16px;
   }
 }
 .l-footer__menu {
@@ -808,6 +808,25 @@ body.is-menu-open {
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s;
+}
+.l-footer__privacy {
+  text-align: right;
+  padding: 12px 0;
+}
+.l-footer__privacy-link {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--text);
+  transition: color 0.3s;
+}
+@media (hover: hover) and (pointer: fine) {
+  .l-footer__privacy-link:hover {
+    color: var(--text-accent);
+  }
 }
 .l-footer__copyright {
   background-color: var(--color-dark);
@@ -1259,18 +1278,24 @@ body.is-hove .c-cursor__ring {
 }
 
 .c-cta {
+  padding-top: 120px;
+}
+@media (max-width: 768px) {
+  .c-cta {
+    padding-top: 80px;
+  }
+}
+.c-cta__bg {
   background-image: url(../images/contact-bg.webp);
   background-position: center;
   background-size: cover;
   background-blend-mode: multiply;
   background-color: var(--color-dark);
   padding: 120px 0;
-  margin-bottom: 80px;
 }
 @media (max-width: 768px) {
-  .c-cta {
+  .c-cta__bg {
     padding: 80px 0;
-    margin-bottom: 56px;
   }
 }
 .c-cta__content {
@@ -1942,24 +1967,16 @@ body.is-hove .c-cursor__ring {
   font-weight: 400;
   letter-spacing: 0;
   color: var(--text-accent);
-  text-decoration: none;
   opacity: 1;
-  transition: opacity 0.3s;
-}
-.p-work__link::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background-color: var(--color-gold);
-  transition: 0.3s;
 }
 @media (hover: hover) and (pointer: fine) {
   .p-work__link:hover {
     opacity: 0.7;
+    text-decoration: none;
   }
+}
+.p-work__note {
+  margin: 0;
 }
 .p-work__list {
   margin: 0;
@@ -2863,19 +2880,19 @@ body.is-hove .c-cursor__ring {
   margin: 0;
   overflow: hidden;
   max-height: 0;
-  transition: max-height 0.4s, padding 0.4s;
+  transition: max-height 0.7s;
 }
 .p-service__faq-a.is-open {
   max-height: 300px;
-  padding-bottom: 28px;
-}
-@media (max-width: 599px) {
-  .p-service__faq-a.is-open {
-    padding-bottom: 20px;
-  }
 }
 .p-service__faq-a .c-text {
   opacity: 0.7;
+  padding-bottom: 28px;
+}
+@media (max-width: 599px) {
+  .p-service__faq-a .c-text {
+    padding-bottom: 20px;
+  }
 }
 
 .p-contact {

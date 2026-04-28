@@ -46,22 +46,14 @@
     font-weight: 400;
     letter-spacing: 0;
     color: var(--text-accent);
-    text-decoration: none;
     opacity: 1;
-    transition: opacity .3s;
-    &::before {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background-color: var(--color-gold);
-      transition: .3s;
-    }
     @include mx.hover {
       opacity: .7;
+      text-decoration: none;
     }
+  }
+  &__note {
+    margin: 0;
   }
   &__list {
     margin: 0;

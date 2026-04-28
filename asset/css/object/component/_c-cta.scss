@@ -1,16 +1,20 @@
 @use "./../../foundation/_mixin.scss" as mx;
 
 .c-cta {
-  background-image: url(../images/contact-bg.webp);
-  background-position: center;
-  background-size: cover;
-  background-blend-mode: multiply;
-  background-color: var(--color-dark);
-  padding: 120px 0;
-  margin-bottom: 80px;
+  padding-top: 120px;
   @include mx.breakpoint(tablet) {
-    padding: 80px 0;
-    margin-bottom: 56px;
+    padding-top: 80px;
+  }
+  &__bg {
+    background-image: url(../images/contact-bg.webp);
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-color: var(--color-dark);
+    padding: 120px 0;
+    @include mx.breakpoint(tablet) {
+      padding: 80px 0;
+    }
   }
   &__content {
     background-color: var(--color-cream);
