@@ -64,7 +64,7 @@
         </h2>
         <div class="p-about__skill-content">
           <ul class="p-about__skill-list">
-            <li class="p-about__skill-item u-fade-up js-fade js-hove">
+            <li class="p-about__skill-item u-fade-up js-fade js-hover">
               <div class="p-about__skill-card">
                 <span class="p-about__skill-num dm-mono">01</span>
                 <h3 class="p-about__skill-title dm-mono">HTML / CSS</h3>
@@ -73,7 +73,7 @@
                 </p>
               </div>
             </li>
-            <li class="p-about__skill-item u-fade-up js-fade js-hove">
+            <li class="p-about__skill-item u-fade-up js-fade js-hover">
               <div class="p-about__skill-card">
                 <span class="p-about__skill-num dm-mono">02</span>
                 <h3 class="p-about__skill-title dm-mono">JavaScript</h3>
@@ -82,7 +82,7 @@
                 </p>
               </div>
             </li>
-            <li class="p-about__skill-item u-fade-up js-fade js-hove">
+            <li class="p-about__skill-item u-fade-up js-fade js-hover">
               <div class="p-about__skill-card">
                 <span class="p-about__skill-num dm-mono">03</span>
                 <h3 class="p-about__skill-title dm-mono">WordPress</h3>
@@ -91,7 +91,7 @@
                 </p>
               </div>
             </li>
-            <li class="p-about__skill-item u-fade-up js-fade js-hove">
+            <li class="p-about__skill-item u-fade-up js-fade js-hover">
               <div class="p-about__skill-card">
                 <span class="p-about__skill-num dm-mono">04</span>
                 <h3 class="p-about__skill-title dm-mono">Figma</h3>
@@ -106,15 +106,15 @@
         <!-- スキルタグ -->
         <div class="p-about__skill-tags u-fade-up js-fade">
           <ul class="c-skill-tag__list">
-            <li class="c-skill-tag__item dm-mono js-hove">HTML5</li>
-            <li class="c-skill-tag__item dm-mono js-hove">CSS3</li>
-            <li class="c-skill-tag__item dm-mono js-hove">Sass / SCSS</li>
-            <li class="c-skill-tag__item dm-mono js-hove">JavaScript</li>
-            <li class="c-skill-tag__item dm-mono js-hove">jQuery</li>
-            <li class="c-skill-tag__item dm-mono js-hove">WordPress</li>
-            <li class="c-skill-tag__item dm-mono js-hove">Figma</li>
-            <li class="c-skill-tag__item dm-mono js-hove">Git / GitHub</li>
-            <li class="c-skill-tag__item dm-mono js-hove">VSCode</li>
+            <li class="c-skill-tag__item dm-mono js-hover">HTML5</li>
+            <li class="c-skill-tag__item dm-mono js-hover">CSS3</li>
+            <li class="c-skill-tag__item dm-mono js-hover">Sass / SCSS</li>
+            <li class="c-skill-tag__item dm-mono js-hover">JavaScript</li>
+            <li class="c-skill-tag__item dm-mono js-hover">jQuery</li>
+            <li class="c-skill-tag__item dm-mono js-hover">WordPress</li>
+            <li class="c-skill-tag__item dm-mono js-hover">Figma</li>
+            <li class="c-skill-tag__item dm-mono js-hover">Git / GitHub</li>
+            <li class="c-skill-tag__item dm-mono js-hover">VSCode</li>
           </ul>
         </div>
       </div>

@@ -147,15 +147,15 @@
               丁寧なコミュニケーションと安定した実装を大切に、長くお付き合いいただけるパートナーを目指しています。
             </p>
             <ul class="c-skill-tag__list">
-              <li class="c-skill-tag__item dm-mono js-hove">HTML5</li>
-              <li class="c-skill-tag__item dm-mono js-hove">CSS3</li>
-              <li class="c-skill-tag__item dm-mono js-hove">Sass / SCSS</li>
-              <li class="c-skill-tag__item dm-mono js-hove">JavaScript</li>
-              <li class="c-skill-tag__item dm-mono js-hove">jQuery</li>
-              <li class="c-skill-tag__item dm-mono js-hove">WordPress</li>
-              <li class="c-skill-tag__item dm-mono js-hove">Figma</li>
-              <li class="c-skill-tag__item dm-mono js-hove">Git / GitHub</li>
-              <li class="c-skill-tag__item dm-mono js-hove">VSCode</li>
+              <li class="c-skill-tag__item dm-mono js-hover">HTML5</li>
+              <li class="c-skill-tag__item dm-mono js-hover">CSS3</li>
+              <li class="c-skill-tag__item dm-mono js-hover">Sass / SCSS</li>
+              <li class="c-skill-tag__item dm-mono js-hover">JavaScript</li>
+              <li class="c-skill-tag__item dm-mono js-hover">jQuery</li>
+              <li class="c-skill-tag__item dm-mono js-hover">WordPress</li>
+              <li class="c-skill-tag__item dm-mono js-hover">Figma</li>
+              <li class="c-skill-tag__item dm-mono js-hover">Git / GitHub</li>
+              <li class="c-skill-tag__item dm-mono js-hover">VSCode</li>
             </ul>
             <div class="c-button">
               <a class="c-button__link" href="<?php echo esc_url(home_url('/about')); ?>">

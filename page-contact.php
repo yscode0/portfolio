@@ -41,7 +41,7 @@
                   <span class="p-contact__required dm-mono">required</span>
                 </label>
                 <input
-                  class="p-contact__input js-hove"
+                  class="p-contact__input js-hover"
                   type="text"
                   id="name"
                   name="name"
@@ -56,7 +56,7 @@
                   <span class="p-contact__optional dm-mono">optional</span>
                 </label>
                 <input
-                  class="p-contact__input js-hove"
+                  class="p-contact__input js-hover"
                   type="text"
                   id="company"
                   name="company"
@@ -70,7 +70,7 @@
                   <span class="p-contact__required dm-mono">required</span>
                 </label>
                 <input
-                  class="p-contact__input js-hove"
+                  class="p-contact__input js-hover"
                   type="email"
                   id="email"
                   name="email"
@@ -86,7 +86,7 @@
                 </label>
                 <div class="p-contact__select-wrap">
                   <select
-                    class="p-contact__select js-hove"
+                    class="p-contact__select js-hover"
                     id="type"
                     name="type"
                     required
@@ -106,7 +106,7 @@
                   <span class="p-contact__required dm-mono">required</span>
                 </label>
                 <textarea
-                  class="p-contact__textarea js-hove"
+                  class="p-contact__textarea js-hover"
                   id="message"
                   name="message"
                   placeholder="案件の概要・納期・ご予算などをお聞かせいただけるとスムーズです。"
@@ -117,7 +117,7 @@
 
               <div class="p-contact__privacy">
                 <label class="p-contact__privacy-label">
-                  <input class="p-contact__privacy-check js-hove" type="checkbox" name="privacy" required>
+                  <input class="p-contact__privacy-check js-hover" type="checkbox" name="privacy" required>
                   <span class="p-contact__privacy-text dm-mono">
                     <a class="p-contact__privacy-link" href="<?php echo esc_url(home_url('/privacy')); ?>" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a>に同意する
                   </span>

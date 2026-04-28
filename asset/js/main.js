@@ -33,7 +33,7 @@ function initCustomCursor() {
     rafId = requestAnimationFrame(animRing);
   })();
 
-  document.querySelectorAll('a, button, .js-hove').forEach(el => {
+  document.querySelectorAll('a, button, .js-hover').forEach(el => {
     el.addEventListener('mouseenter', () => document.body.classList.add('is-hove'));
     el.addEventListener('mouseleave', () => document.body.classList.remove('is-hove'));
   });

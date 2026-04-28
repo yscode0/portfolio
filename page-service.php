@@ -92,7 +92,7 @@
 
         <div class="p-service__price-content">
           <ul class="p-service__price-list">
-            <li class="p-service__price-item u-fade-up js-fade js-hove">
+            <li class="p-service__price-item u-fade-up js-fade js-hover">
               <div class="p-service__price-card">
                 <h3 class="p-service__price-title dm-mono">Coding</h3>
                 <div class="p-service__price-info">
@@ -105,7 +105,7 @@
                 </div>
               </div>
             </li>
-            <li class="p-service__price-item u-fade-up js-fade js-hove">
+            <li class="p-service__price-item u-fade-up js-fade js-hover">
               <div class="p-service__price-card">
                 <h3 class="p-service__price-title dm-mono">WordPress</h3>
                 <div class="p-service__price-info">
@@ -118,7 +118,7 @@
                 </div>
               </div>
             </li>
-            <li class="p-service__price-item u-fade-up js-fade js-hove">
+            <li class="p-service__price-item u-fade-up js-fade js-hover">
               <div class="p-service__price-card">
                 <h3 class="p-service__price-title dm-mono">Site Fix</h3>
                 <div class="p-service__price-info">
@@ -152,7 +152,7 @@
           ご依頼からお届けまでの流れをご説明します。
         </p>
         <ol class="p-service__flow-list">
-          <li class="p-service__flow-item u-fade-up js-fade js-hove">
+          <li class="p-service__flow-item u-fade-up js-fade js-hover">
             <div class="p-service__flow-card">
               <span class="p-service__flow-num dm-mono">01</span>
               <h3 class="p-service__flow-title dm-mono">お問い合わせ</h3>
@@ -161,7 +161,7 @@
               </p>
             </div>
           </li>
-          <li class="p-service__flow-item u-fade-up js-fade js-hove">
+          <li class="p-service__flow-item u-fade-up js-fade js-hover">
             <div class="p-service__flow-card">
               <span class="p-service__flow-num dm-mono">02</span>
               <h3 class="p-service__flow-title dm-mono">ヒアリング・お見積り</h3>
@@ -170,7 +170,7 @@
               </p>
             </div>
           </li>
-          <li class="p-service__flow-item u-fade-up js-fade js-hove">
+          <li class="p-service__flow-item u-fade-up js-fade js-hover">
             <div class="p-service__flow-card">
               <span class="p-service__flow-num dm-mono">03</span>
               <h3 class="p-service__flow-title dm-mono">制作・実装</h3>
@@ -179,7 +179,7 @@
               </p>
             </div>
           </li>
-          <li class="p-service__flow-item u-fade-up js-fade js-hove">
+          <li class="p-service__flow-item u-fade-up js-fade js-hover">
             <div class="p-service__flow-card">
               <span class="p-service__flow-num dm-mono">04</span>
               <h3 class="p-service__flow-title dm-mono">確認・修正</h3>
@@ -188,7 +188,7 @@
               </p>
             </div>
           </li>
-          <li class="p-service__flow-item u-fade-up js-fade js-hove">
+          <li class="p-service__flow-item u-fade-up js-fade js-hover">
             <div class="p-service__flow-card">
               <span class="p-service__flow-num dm-mono">05</span>
               <h3 class="p-service__flow-title dm-mono">納品</h3>
@@ -210,7 +210,7 @@
         </h2>
         <dl class="p-service__faq-list">
           <div class="p-service__faq-item u-fade-up js-fade">
-            <dt class="p-service__faq-q dm-mono js-accordion-trigger js-hove">
+            <dt class="p-service__faq-q dm-mono js-accordion-trigger js-hover">
               <span>デザインなしでも依頼できますか？</span>
               <span class="p-service__faq-icon"></span>
             </dt>
@@ -221,7 +221,7 @@
             </dd>
           </div>
           <div class="p-service__faq-item u-fade-up js-fade">
-            <dt class="p-service__faq-q dm-mono js-accordion-trigger js-hove">
+            <dt class="p-service__faq-q dm-mono js-accordion-trigger js-hover">
               <span>納期はどのくらいですか？</span>
               <span class="p-service__faq-icon"></span>
             </dt>
@@ -232,7 +232,7 @@
             </dd>
           </div>
           <div class="p-service__faq-item u-fade-up js-fade">
-            <dt class="p-service__faq-q dm-mono js-accordion-trigger js-hove">
+            <dt class="p-service__faq-q dm-mono js-accordion-trigger js-hover">
               <span>修正対応はしてもらえますか？</span>
               <span class="p-service__faq-icon"></span>
             </dt>
@@ -243,7 +243,7 @@
             </dd>
           </div>
           <div class="p-service__faq-item u-fade-up js-fade">
-            <dt class="p-service__faq-q dm-mono js-accordion-trigger js-hove">
+            <dt class="p-service__faq-q dm-mono js-accordion-trigger js-hover">
               <span>制作会社からのコーディング依頼は受けていますか？</span>
               <span class="p-service__faq-icon"></span>
             </dt>
