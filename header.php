@@ -44,10 +44,6 @@
 </head>
 <body <?php body_class(); ?>>
 
-  <!-- カスタムカーソル -->
-  <div class="c-cursor js-cursor"></div>
-  <div class="c-cursor__ring js-cursor-ring"></div>
-
   <!-- ヘッダー -->
   <header class="l-header js-header">
     <div class="c-site-title">
@@ -55,7 +51,7 @@
         yosh<span class="u-accent">i</span> code
       </a>
     </div>
-    <nav class="l-header__nav">
+    <nav class="l-header__nav" aria-label="メインナビゲーション">
       <?php
       wp_nav_menu(array(
         'theme_location' => 'header_menu',
@@ -66,12 +62,12 @@
       ));
       ?>
     </nav>
-    <button class="l-header__burger js-menu-toggle">
+    <button class="l-header__burger js-menu-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="burger-menu">
       <span class="l-header__burger-bar"></span>
       <span class="l-header__burger-bar"></span>
     </button>
 
-    <div class="l-header__burger-content js-menu">
+    <div class="l-header__burger-content js-menu" id="burger-menu" role="dialog" aria-modal="true" aria-label="ナビゲーションメニュー">
       <div class="l-header__burger-header">
         <div class="c-site-title">
           <a class="c-site-title__link dm-mono" href="<?php echo esc_url(home_url('/')); ?>">
@@ -84,7 +80,7 @@
         </button>
       </div>
       <div class="l-header__burger-body">
-        <nav class="l-header__burger-nav">
+        <nav class="l-header__burger-nav" aria-label="モバイルナビゲーション">
           <?php
           wp_nav_menu(array(
             'theme_location' => 'header_menu',

@@ -56,7 +56,7 @@
       font-size: 1.75rem;
       padding: 6px 36px;
     }
-    &:hover {
+    @include mx.hover {
       border: 2px solid var(--color-gold);
       color: var(--text-accent);
       &::before {

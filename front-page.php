@@ -123,7 +123,7 @@
         </h2>
         <div class="p-top__about-content">
           <figure class="p-top__about-img u-fade-up js-fade">
-            <img src="<?php echo esc_url(get_theme_file_uri('/asset/images/yoshi.webp')); ?>" alt="田中 克規" loading="lazy">
+            <img src="<?php echo esc_url(get_theme_file_uri('/asset/images/yoshi.webp')); ?>" alt="田中 克規" loading="lazy" width="320" height="320">
             <figcaption class="p-top__about-caption">
               <p class="p-top__about-name dm-mono">
                 Yosh<span class="u-accent">i</span>nori Tanaka
