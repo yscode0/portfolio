@@ -83,7 +83,6 @@
     appearance: none;
     -webkit-appearance: none;
     @include mx.breakpoint(sp) {
-      font-size: .9375rem;
       padding: 14px 16px;
     }
     &::placeholder {

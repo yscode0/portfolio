@@ -55,10 +55,10 @@
 
             if ($top_works->have_posts()) :
               while ($top_works->have_posts()) : $top_works->the_post();
-                $works_role        = get_field('works_role');
-                $works_tech        = get_field('works_tech');
-                $pc_img            = get_field('works_pc_img');
-                $works_description = get_field('works_description');
+                $works_role        = mytheme_get_field('works_role');
+                $works_tech        = mytheme_get_field('works_tech');
+                $pc_img            = mytheme_get_field('works_pc_img');
+                $works_description = mytheme_get_field('works_description');
             ?>
             <li class="c-works__item u-fade-up js-fade">
               <article class="c-works__card">
@@ -66,7 +66,7 @@
                   <span class="c-works__arrow"></span>
                   <figure class="c-works__img">
                     <?php if ($pc_img) : ?>
-                    <img src="<?php echo esc_url($pc_img['url']); ?>" alt="<?php echo esc_attr($pc_img['alt']); ?>" loading="lazy" width="413" height="239">
+                    <?php mytheme_works_card_image($pc_img); ?>
                     <?php endif; ?>
                   </figure>
                   <h3 class="c-works__title dm-mono"><?php echo esc_html(get_the_title()); ?></h3>
@@ -123,7 +123,7 @@
         </h2>
         <div class="p-top__about-content">
           <figure class="p-top__about-img u-fade-up js-fade">
-            <img src="<?php echo esc_url(get_theme_file_uri('/asset/images/yoshi.webp')); ?>" alt="田中 克規" loading="lazy">
+            <img src="<?php echo esc_url(get_theme_file_uri('/asset/images/yoshi.webp')); ?>" alt="田中 克規" loading="lazy" width="320" height="320">
             <figcaption class="p-top__about-caption">
               <p class="p-top__about-name dm-mono">
                 Yosh<span class="u-accent">i</span>nori Tanaka

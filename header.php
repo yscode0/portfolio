@@ -7,7 +7,7 @@
     $description = '大阪のフリーランスWebコーダー田中克規の制作実績一覧です。コーポレートサイトや店舗サイトなど、HTML / CSS / JavaScript / WordPressを用いたコーディング実績をご紹介しています。制作会社様のコーディングパートナーとしての対応実績もございます。';
   } else {
     // 各ページのACFフィールドから取得
-    $description = function_exists('get_field') ? get_field('description') : '';
+    $description = mytheme_get_field('description') ?: '';
   }
   ?>
   
@@ -43,10 +43,7 @@
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-
-  <!-- カスタムカーソル -->
-  <div class="c-cursor js-cursor"></div>
-  <div class="c-cursor__ring js-cursor-ring"></div>
+<?php wp_body_open(); ?>
 
   <!-- ヘッダー -->
   <header class="l-header js-header">
@@ -55,7 +52,7 @@
         yosh<span class="u-accent">i</span> code
       </a>
     </div>
-    <nav class="l-header__nav">
+    <nav class="l-header__nav" aria-label="メインナビゲーション">
       <?php
       wp_nav_menu(array(
         'theme_location' => 'header_menu',
@@ -66,25 +63,25 @@
       ));
       ?>
     </nav>
-    <button class="l-header__burger js-menu-toggle">
+    <button class="l-header__burger js-menu-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="burger-menu">
       <span class="l-header__burger-bar"></span>
       <span class="l-header__burger-bar"></span>
     </button>
 
-    <div class="l-header__burger-content js-menu">
+    <div class="l-header__burger-content js-menu" id="burger-menu" role="dialog" aria-modal="true" aria-label="ナビゲーションメニュー">
       <div class="l-header__burger-header">
         <div class="c-site-title">
           <a class="c-site-title__link dm-mono" href="<?php echo esc_url(home_url('/')); ?>">
             yosh<span class="u-accent">i</span> code
           </a>
         </div>
-        <button class="l-header__burger js-menu-toggle">
+        <button class="l-header__burger js-menu-toggle" aria-label="メニューを閉じる" aria-expanded="true" aria-controls="burger-menu">
           <span class="l-header__burger-bar"></span>
           <span class="l-header__burger-bar"></span>
         </button>
       </div>
       <div class="l-header__burger-body">
-        <nav class="l-header__burger-nav">
+        <nav class="l-header__burger-nav" aria-label="モバイルナビゲーション">
           <?php
           wp_nav_menu(array(
             'theme_location' => 'header_menu',

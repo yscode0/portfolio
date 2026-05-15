@@ -1,43 +1,11 @@
 "use strict";
 // DOMが読み込まれたら実行
 document.addEventListener("DOMContentLoaded", function() {
-  initCustomCursor();
   initBurgerMenu();
   initHeader()
   initFadeInAnimations();
   initAccordion();
 });
-
-// カスタムカーソル
-function initCustomCursor() {
-  // タッチデバイスはスキップ
-  if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
-
-  const cursor = document.querySelector('.js-cursor');
-  const ring = document.querySelector('.js-cursor-ring');
-  if (!cursor || !ring) return;
-  let mx = 0, my = 0, rx = 0, ry = 0;
-
-  document.addEventListener('mousemove', e => {
-    mx = e.clientX; my = e.clientY;
-    cursor.style.left = mx + 'px';
-    cursor.style.top  = my + 'px';
-  });
-
-  let rafId;
-  (function animRing() {
-    rx += (mx - rx) * 0.07;
-    ry += (my - ry) * 0.07;
-    ring.style.left = rx + 'px';
-    ring.style.top  = ry + 'px';
-    rafId = requestAnimationFrame(animRing);
-  })();
-
-  document.querySelectorAll('a, button, .js-hover').forEach(el => {
-    el.addEventListener('mouseenter', () => document.body.classList.add('is-hove'));
-    el.addEventListener('mouseleave', () => document.body.classList.remove('is-hove'));
-  });
-}
 
 // ハンバーガーメニューの開閉制御
 function initBurgerMenu() {
@@ -45,30 +13,37 @@ function initBurgerMenu() {
   const burgerMenu = document.querySelector(".js-menu");
   if (!burgerButtons.length || !burgerMenu) return;
 
+  function updateMenuButtonState(isOpen) {
+    burgerButtons.forEach(btn => {
+      btn.classList.toggle("is-open", isOpen);
+      btn.setAttribute("aria-expanded", String(isOpen));
+      btn.setAttribute("aria-label", isOpen ? "メニューを閉じる" : "メニューを開く");
+    });
+  }
+
   function openMenu() {
     document.body.classList.add("is-menu-open");
     burgerMenu.classList.add("is-open");
-    burgerButtons.forEach(btn => {
-      btn.classList.add("is-open");
-      btn.setAttribute("aria-expanded", "true");
-    });
+    updateMenuButtonState(true);
   }
 
   function closeMenu() {
     document.body.classList.remove("is-menu-open");
     burgerMenu.classList.remove("is-open");
-    burgerButtons.forEach(btn => {
-      btn.classList.remove("is-open");
-      btn.setAttribute("aria-expanded", "false");
-    });
+    updateMenuButtonState(false);
   }
 
+  updateMenuButtonState(burgerMenu.classList.contains("is-open"));
+
   burgerButtons.forEach(btn => {
-    btn.setAttribute("aria-expanded", "false");
     btn.addEventListener("click", () => {
       const isOpen = burgerMenu.classList.contains("is-open");
       isOpen ? closeMenu() : openMenu();
     });
+  });
+
+  burgerMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", closeMenu);
   });
 
   document.addEventListener("keydown", (e) => {
@@ -82,36 +57,33 @@ function initBurgerMenu() {
 function initHeader() {
   const header = document.querySelector(".js-header");
   const hero = document.querySelector(".js-mv");
-
   if (!header || !hero) return;
 
   let lastScrollY = window.scrollY;
+  let ticking = false;
 
-  /* hero監視 */
   const heroObserver = new IntersectionObserver((entries) => {
-    const entry = entries[0];
-
-    header.classList.toggle("is-active", !entry.isIntersecting);
-
+    // rAFに包んでclassListの書き込みを描画タイミングに合わせる
+    requestAnimationFrame(() => {
+      header.classList.toggle("is-active", !entries[0].isIntersecting);
+    });
   });
-
   heroObserver.observe(hero);
 
-  /* スクロール方向 */
   window.addEventListener("scroll", () => {
-
-    const currentScrollY = window.scrollY;
-
-    if (currentScrollY > lastScrollY && currentScrollY > 100) {
-      header.classList.add("is-hidden");
-    } else {
-      header.classList.remove("is-hidden");
-    }
-
-    lastScrollY = currentScrollY;
-
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        header.classList.add("is-hidden");
+      } else {
+        header.classList.remove("is-hidden");
+      }
+      lastScrollY = currentScrollY;
+      ticking = false;
+    });
   });
-
 }
 
 // フェードインアニメーション
@@ -146,19 +118,34 @@ function initAccordion() {
   const triggers = document.querySelectorAll(".js-accordion-trigger");
   if (!triggers.length) return;
 
+  function toggleAccordion(trigger) {
+    const body = document.getElementById(trigger.getAttribute("aria-controls"));
+    if (!body) return;
+
+    const isOpen = trigger.classList.contains("is-open");
+
+    // 他を閉じる（1つだけ開く場合）
+    // triggers.forEach(t => {
+    //   t.classList.remove("is-open");
+    //   t.setAttribute("aria-expanded", "false");
+    //   document.getElementById(t.getAttribute("aria-controls")).classList.remove("is-open");
+    // });
+
+    trigger.classList.toggle("is-open", !isOpen);
+    trigger.setAttribute("aria-expanded", String(!isOpen));
+    body.classList.toggle("is-open", !isOpen);
+  }
+
   triggers.forEach(trigger => {
     trigger.addEventListener("click", () => {
-      const body = trigger.nextElementSibling;
-      const isOpen = trigger.classList.contains("is-open");
+      toggleAccordion(trigger);
+    });
 
-      // 他を閉じる（1つだけ開く場合）
-      // triggers.forEach(t => {
-      //   t.classList.remove("is-open");
-      //   t.nextElementSibling.classList.remove("is-open");
-      // });
+    trigger.addEventListener("keydown", (e) => {
+      if (e.key !== "Enter" && e.key !== " ") return;
 
-      trigger.classList.toggle("is-open", !isOpen);
-      body.classList.toggle("is-open", !isOpen);
+      e.preventDefault();
+      toggleAccordion(trigger);
     });
   });
 }

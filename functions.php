@@ -5,27 +5,140 @@ function my_enqueue_scripts() {
   $js_path  = get_template_directory() . '/asset/js/main.js';
   $css_path = get_template_directory() . '/asset/css/app.css';
 
-  // Googleフォント（preconnectはwp_head hookで別途追加）
-  wp_enqueue_style(
-    'google_fonts',
-    'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Noto+Sans+JP:wght@100..900&display=swap',
-    [],
-    null  // バージョン管理不要なのでnull
-  );
-
-  wp_enqueue_style('style_css', get_theme_file_uri('/asset/css/app.css') , ['google_fonts'], filemtime($css_path));
-  wp_enqueue_script('main_js', get_theme_file_uri('/asset/js/main.js') , [], filemtime($js_path), true);
+  wp_enqueue_style('style_css', get_theme_file_uri('/asset/css/app.css'), [], filemtime($css_path));
+  wp_enqueue_script('main_js', get_theme_file_uri('/asset/js/main.js'), [], filemtime($js_path), true);
 }
 add_action('wp_enqueue_scripts', 'my_enqueue_scripts');
 
-
-// preconnectタグを追加
 function mytheme_preconnect_fonts() {
-  echo '<link rel="preconnect" href="https://fonts.googleapis.com">' . "\n";
-  echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' . "\n";
+  // preconnect不要（外部フォント使用なし）
+
+  // Cormorant Garamond Mediumをpreload（LCP要素）
+  $font_url = get_theme_file_uri('/asset/fonts/CormorantGaramond-Medium.woff2');
+  echo '<link rel="preload" href="' . esc_url($font_url) . '" as="font" type="font/woff2" crossorigin>' . "\n";
+
+  // app.css preload
+  $css_path = get_template_directory() . '/asset/css/app.css';
+  $css_url  = get_theme_file_uri('/asset/css/app.css');
+  echo '<link rel="preload" href="' . esc_url($css_url) . '?ver=' . filemtime($css_path) . '" as="style">' . "\n";
 }
 add_action('wp_head', 'mytheme_preconnect_fonts', 1);
 
+// CF7のJS/CSSをコンタクトページ以外で無効化
+function disable_cf7_scripts($posts) {
+  if (is_admin()) return $posts;
+
+  // コンタクトページ以外ではCF7スクリプトを削除
+  if (!is_page('contact')) {
+    wp_dequeue_script('contact-form-7');
+    wp_dequeue_script('contact-form-7-swv');
+    wp_dequeue_style('contact-form-7');
+    wp_dequeue_script('wpcf7-swv');
+  }
+
+  return $posts;
+}
+add_action('wp_enqueue_scripts', 'disable_cf7_scripts', 99);
+
+// ACFフィールド取得のラッパー
+function mytheme_get_field($selector, $post_id = false, $format_value = true) {
+  if (function_exists('get_field')) {
+    return get_field($selector, $post_id, $format_value);
+  }
+
+  return null;
+}
+
+// ACFが無効な場合は管理画面に通知
+function mytheme_required_plugin_notice() {
+  if (function_exists('get_field')) return;
+
+  echo '<div class="notice notice-error"><p>';
+  echo esc_html('Yoshi Codeテーマを正しく表示するには Advanced Custom Fields が必要です。プラグインを有効化してください。');
+  echo '</p></div>';
+}
+add_action('admin_notices', 'mytheme_required_plugin_notice');
+
+// ACF画像をカード用のレスポンシブ画像として出力
+function mytheme_works_card_image($image) {
+  if (empty($image)) return;
+
+  $image_id = 0;
+  $image_url = '';
+  $image_alt = '';
+
+  if (is_array($image)) {
+    $image_id = isset($image['ID']) ? (int) $image['ID'] : (isset($image['id']) ? (int) $image['id'] : 0);
+    $image_url = isset($image['url']) ? $image['url'] : '';
+    $image_alt = isset($image['alt']) ? $image['alt'] : '';
+  } elseif (is_numeric($image)) {
+    $image_id = (int) $image;
+  } elseif (is_string($image)) {
+    $image_url = $image;
+  }
+
+  $attrs = [
+    'alt'      => $image_alt,
+    'loading'  => 'lazy',
+    'decoding' => 'async',
+    'width'    => '413',
+    'height'   => '239',
+    'sizes'    => '(max-width: 599px) calc(100vw - 40px), 413px',
+  ];
+
+  if ($image_id) {
+    echo wp_get_attachment_image($image_id, 'works_card', false, $attrs);
+    return;
+  }
+
+  if ($image_url) {
+    echo '<img src="' . esc_url($image_url) . '" alt="' . esc_attr($image_alt) . '" loading="lazy" decoding="async" width="413" height="239">';
+  }
+}
+
+// Google analytics
+function mytheme_google_analytics() {
+  if ( is_admin() ) return; // 管理画面では出力しない
+  ?>
+  <!-- Google tag (gtag.js) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    (function() {
+      var loaded = false;
+      var events = ['scroll', 'pointerdown', 'keydown', 'touchstart'];
+
+      function loadAnalytics() {
+        if (loaded) return;
+        loaded = true;
+
+        events.forEach(function(eventName) {
+          window.removeEventListener(eventName, loadAnalytics, { passive: true });
+        });
+
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZNT886ZDKP';
+        script.onload = function() {
+          gtag('config', 'G-ZNT886ZDKP');
+        };
+        document.head.appendChild(script);
+      }
+
+      events.forEach(function(eventName) {
+        window.addEventListener(eventName, loadAnalytics, { once: true, passive: true });
+      });
+
+      window.addEventListener('load', function() {
+        window.setTimeout(loadAnalytics, 8000);
+      });
+    })();
+  </script>
+  <?php
+}
+add_action( 'wp_head', 'mytheme_google_analytics' );
 
 // カスタム投稿タイプ「works」の登録
 function register_works_post_type() {
@@ -75,6 +188,7 @@ add_filter('intermediate_image_sizes_advanced', 'disable_image_sizes');
 function mytheme_set() {
   add_theme_support( 'title-tag' );
   add_theme_support('post-thumbnails');
+  add_image_size('works_card', 826, 478, true);
   register_nav_menus( [
     'header_menu' => 'ヘッダーメニュー',
     'footer_menu' => 'フッターメニュー',
@@ -168,7 +282,7 @@ add_action('init', function() {
 
 // パンくずリスト
 function breadcrumb() {
-  $home = '<li class="c-breadcrumb__item dm-mono"><a class="c-breadcrumb__link" href="'.get_bloginfo('url').'" >top</a></li>';
+  $home = '<li class="c-breadcrumb__item dm-mono"><a class="c-breadcrumb__link" href="' . esc_url(home_url('/')) . '">top</a></li>';
 
   echo '<ul class="c-breadcrumb__list">';
   if ( is_front_page() ) {
@@ -183,7 +297,7 @@ function breadcrumb() {
   } else if ( is_singular('works') ) {
     echo $home;
     echo '<li class="c-breadcrumb__item dm-mono"><a class="c-breadcrumb__link" href="' . esc_url( get_post_type_archive_link('works') ) . '">works</a></li>';
-    echo '<li class="c-breadcrumb__item dm-mono">' . get_the_title() . '</li>';
+    echo '<li class="c-breadcrumb__item dm-mono">' . esc_html(get_the_title()) . '</li>';
 
   // 
   } else if ( is_category() ) {
@@ -193,19 +307,19 @@ function breadcrumb() {
     while ($cat_id != 0){
       $cat = get_category( $cat_id );
       $cat_link = get_category_link( $cat_id );
-      array_unshift( $cat_list, '<li class="c-breadcrumb__item dm-mono"><a href="'.$cat_link.'">'.$cat->name.'</a></li>' );
+      array_unshift( $cat_list, '<li class="c-breadcrumb__item dm-mono"><a href="' . esc_url($cat_link) . '">' . esc_html($cat->name) . '</a></li>' );
       $cat_id = $cat->parent;
     }
     echo $home;
     foreach($cat_list as $value){
       echo $value;
     }
-    the_archive_title('<li class="c-breadcrumb__item dm-mono">', '</li>');
+    echo '<li class="c-breadcrumb__item dm-mono">' . esc_html(get_the_archive_title()) . '</li>';
   }
   // アーカイブ・タグページ
   else if ( is_archive() ) {
     echo $home;
-    the_archive_title('<li class="c-breadcrumb__item dm-mono">', '</li>');
+    echo '<li class="c-breadcrumb__item dm-mono">' . esc_html(get_the_archive_title()) . '</li>';
   }
   // 投稿ページ
   else if ( is_single() ) {
@@ -215,18 +329,18 @@ function breadcrumb() {
     while ($cat_id != 0){
       $cat = get_category( $cat_id );
       $cat_link = get_category_link( $cat_id );
-      array_unshift( $cat_list, '<li class="c-breadcrumb__item dm-mono"><a href="'.$cat_link.'">'.$cat->name.'</a></li>' );
+      array_unshift( $cat_list, '<li class="c-breadcrumb__item dm-mono"><a href="' . esc_url($cat_link) . '">' . esc_html($cat->name) . '</a></li>' );
       $cat_id = $cat->parent;
     }
     foreach($cat_list as $value){
       echo $value;
     }
-    the_title('<li class="c-breadcrumb__item dm-mono">', '</li>');
+    echo '<li class="c-breadcrumb__item dm-mono">' . esc_html(get_the_title()) . '</li>';
   }
   // 固定ページ
   else if( is_page() ) {
     echo $home;
-    the_title('<li class="c-breadcrumb__item dm-mono">', '</li>');
+    echo '<li class="c-breadcrumb__item dm-mono">' . esc_html(get_the_title()) . '</li>';
   }
   // 404ページの場合
   else if( is_404() ) {
@@ -235,3 +349,233 @@ function breadcrumb() {
   }
   echo "</ul>";
 }
+
+// サイトマップ
+function mytheme_sitemap() {
+  if ( ! isset($_GET['sitemap']) ) return;
+
+  header('Content-Type: application/xml; charset=utf-8');
+
+  // noindex対象ページのスラッグ（サイトマップから除外）
+  $exclude_slugs = ['thanks', 'privacy'];
+
+  $urls = [];
+
+  // トップページ
+  $urls[] = [
+    'loc'        => home_url('/'),
+    'priority'   => '1.0',
+    'changefreq' => 'monthly',
+  ];
+
+  // 固定ページ（トップ除外 + noindex除外）
+  $pages = get_posts([
+    'post_type'      => 'page',
+    'posts_per_page' => -1,
+    'exclude'        => [ get_option('page_on_front') ],
+    'orderby'        => 'menu_order',
+    'order'          => 'ASC',
+  ]);
+  foreach ($pages as $page) {
+    if ( in_array($page->post_name, $exclude_slugs) ) continue;
+    $urls[] = [
+      'loc'        => get_permalink($page->ID),
+      'lastmod'    => get_the_modified_date('c', $page->ID),
+      'priority'   => '0.8',
+      'changefreq' => 'monthly',
+    ];
+  }
+
+  // worksアーカイブ
+  $archive_url = get_post_type_archive_link('works');
+  if ( $archive_url ) {
+    $latest_work = get_posts([
+      'post_type'      => 'works',
+      'posts_per_page' => 1,
+      'orderby'        => 'modified',
+      'order'          => 'DESC',
+    ]);
+    $urls[] = [
+      'loc'        => $archive_url,
+      'lastmod'    => ! empty($latest_work) ? get_the_modified_date('c', $latest_work[0]->ID) : '',
+      'priority'   => '0.8',
+      'changefreq' => 'monthly',
+    ];
+  }
+
+  // works個別ページ
+  $works = get_posts([
+    'post_type'      => 'works',
+    'posts_per_page' => -1,
+    'orderby'        => 'date',
+    'order'          => 'DESC',
+  ]);
+  foreach ($works as $work) {
+    $urls[] = [
+      'loc'        => get_permalink($work->ID),
+      'lastmod'    => get_the_modified_date('c', $work->ID),
+      'priority'   => '0.7',
+      'changefreq' => 'yearly',
+    ];
+  }
+
+  echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
+  echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
+  foreach ($urls as $url) {
+    echo '<url>' . "\n";
+    echo '  <loc>' . esc_url($url['loc']) . '</loc>' . "\n";
+    if ( ! empty($url['lastmod']) )    echo '  <lastmod>'    . esc_html($url['lastmod'])    . '</lastmod>' . "\n";
+    if ( ! empty($url['changefreq']) ) echo '  <changefreq>' . esc_html($url['changefreq']) . '</changefreq>' . "\n";
+    if ( ! empty($url['priority']) )   echo '  <priority>'   . esc_html($url['priority'])   . '</priority>' . "\n";
+    echo '</url>' . "\n";
+  }
+  echo '</urlset>';
+  exit;
+}
+add_action('init', 'mytheme_sitemap', 99);
+
+// 構造化データ（JSON-LD）
+function mytheme_json_ld() {
+  $site_url  = home_url('/');
+  $site_name = 'Yoshi Code';
+
+  // ① Person + WebSite（全ページ共通）
+  $person = [
+    '@type'         => 'Person',
+    '@id'           => $site_url . '#person',
+    'name'          => '田中 克規',
+    'alternateName' => 'Yoshinori Tanaka',
+    'jobTitle'      => 'フリーランス Webコーダー',
+    'description'   => '大阪府を拠点に活動するフリーランスWebコーダー。制作会社のコーディングパートナーとしてHTML / CSS / JavaScript / WordPressの実装を担当。',
+    'url'           => $site_url,
+    'address'       => [
+      '@type'           => 'PostalAddress',
+      'addressRegion'   => '大阪府',
+      'addressCountry'  => 'JP',
+    ],
+    'knowsAbout' => ['HTML', 'CSS', 'JavaScript', 'WordPress', 'Sass', 'Figma'],
+  ];
+
+  $website = [
+    '@type'       => 'WebSite',
+    '@id'         => $site_url . '#website',
+    'name'        => $site_name,
+    'description' => get_bloginfo('description'),
+    'url'         => $site_url,
+    'publisher'   => [ '@id' => $site_url . '#person' ],
+  ];
+
+  $schemas = [
+    [ '@context' => 'https://schema.org' ] + $person,
+    [ '@context' => 'https://schema.org' ] + $website,
+  ];
+
+  // ② BreadcrumbList（内部ページ全般）
+  if ( ! is_front_page() ) {
+    $crumbs = [
+      [
+        '@type'    => 'ListItem',
+        'position' => 1,
+        'name'     => 'Top',
+        'item'     => $site_url,
+      ],
+    ];
+
+    if ( is_singular('works') ) {
+      $crumbs[] = [
+        '@type'    => 'ListItem',
+        'position' => 2,
+        'name'     => 'Works',
+        'item'     => (string) get_post_type_archive_link('works'),
+      ];
+      $crumbs[] = [
+        '@type'    => 'ListItem',
+        'position' => 3,
+        'name'     => get_the_title(),
+        'item'     => get_permalink(),
+      ];
+    } elseif ( is_post_type_archive('works') ) {
+      $crumbs[] = [
+        '@type'    => 'ListItem',
+        'position' => 2,
+        'name'     => 'Works',
+        'item'     => get_post_type_archive_link('works'),
+      ];
+    } elseif ( is_page() ) {
+      $crumbs[] = [
+        '@type'    => 'ListItem',
+        'position' => 2,
+        'name'     => get_the_title(),
+        'item'     => get_permalink(),
+      ];
+    }
+
+    $schemas[] = [
+      '@context'        => 'https://schema.org',
+      '@type'           => 'BreadcrumbList',
+      'itemListElement' => $crumbs,
+    ];
+  }
+
+  // ③ CreativeWork（works詳細ページのみ）
+  if ( is_singular('works') ) {
+    $schemas[] = [
+      '@context'      => 'https://schema.org',
+      '@type'         => 'CreativeWork',
+      'name'          => get_the_title(),
+      'url'           => get_permalink(),
+      'datePublished' => get_the_date('c'),
+      'dateModified'  => get_the_modified_date('c'),
+      'creator'       => [ '@id' => $site_url . '#person' ],
+    ];
+  }
+	
+  // ④ FAQPage（serviceページのみ）
+  if ( is_page('service') ) {
+    $schemas[] = [
+	  '@context'   => 'https://schema.org',
+	  '@type'      => 'FAQPage',
+	  'mainEntity' => [
+	    [
+		  '@type'          => 'Question',
+		  'name'           => 'デザインなしでも依頼できますか？',
+		  'acceptedAnswer' => [
+		    '@type' => 'Answer',
+		    'text'  => '基本的にはデザインカンプ（FigmaやXDなど）をご用意いただいた上でのコーディングが中心となります。デザインの用意が難しい場合はご相談ください。',
+		  ],
+	    ],
+	    [
+		  '@type'          => 'Question',
+		  'name'           => '納期はどのくらいですか？',
+		  'acceptedAnswer' => [
+		    '@type' => 'Answer',
+		    'text'  => '案件の規模や内容によって異なります。まずはお問い合わせいただき、ご要件をお聞かせください。可能な限りご希望の納期に沿えるよう対応いたします。',
+		  ],
+	    ],
+	    [
+		  '@type'          => 'Question',
+		  'name'           => '修正対応はしてもらえますか？',
+		  'acceptedAnswer' => [
+		    '@type' => 'Answer',
+		    'text'  => '納品前の修正は対応しております。納品後の追加修正については、内容に応じて別途ご相談させていただく場合があります。',
+		  ],
+	    ],
+	    [
+		  '@type'          => 'Question',
+		 'name'           => '制作会社からのコーディング依頼は受けていますか？',
+		  'acceptedAnswer' => [
+		    '@type' => 'Answer',
+		    'text'  => 'はい、制作会社様のコーディングパートナーとしての対応を歓迎しています。継続的なお取引も大歓迎ですので、お気軽にご相談ください。',
+		  ],
+	    ],
+	  ],
+    ];
+  }
+
+  foreach ($schemas as $schema) {
+    echo '<script type="application/ld+json">' . "\n";
+    echo wp_json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_PRETTY_PRINT);
+    echo "\n" . '</script>' . "\n";
+  }
+}
+add_action('wp_head', 'mytheme_json_ld');

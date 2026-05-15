@@ -37,10 +37,10 @@
 
               if ($client_works->have_posts()) :
                 while ($client_works->have_posts()) : $client_works->the_post();
-                  $works_role = get_field('works_role');
-                  $works_tech = get_field('works_tech');
-                  $pc_img     = get_field('works_pc_img');
-                  $works_description = get_field('works_description');
+                  $works_role = mytheme_get_field('works_role');
+                  $works_tech = mytheme_get_field('works_tech');
+                  $pc_img     = mytheme_get_field('works_pc_img');
+                  $works_description = mytheme_get_field('works_description');
               ?>
               <li class="c-works__item u-fade-up js-fade">
                 <article class="c-works__card">
@@ -48,7 +48,7 @@
                     <span class="c-works__arrow"></span>
                     <figure class="c-works__img">
                       <?php if ($pc_img) : ?>
-                        <img src="<?php echo esc_url($pc_img['url']); ?>" alt="<?php echo esc_attr($pc_img['alt']); ?>" loading="lazy" width="413" height="239">
+                        <?php mytheme_works_card_image($pc_img); ?>
                       <?php endif; ?>
                     </figure>
                     <h3 class="c-works__title dm-mono"><?php echo esc_html(get_the_title()); ?></h3>
@@ -112,10 +112,10 @@
 
               if ($practice_works->have_posts()) :
                 while ($practice_works->have_posts()) : $practice_works->the_post();
-                  $works_role = get_field('works_role');
-                  $works_tech = get_field('works_tech');
-                  $pc_img     = get_field('works_pc_img');
-                  $works_description = get_field('works_description');
+                  $works_role = mytheme_get_field('works_role');
+                  $works_tech = mytheme_get_field('works_tech');
+                  $pc_img     = mytheme_get_field('works_pc_img');
+                  $works_description = mytheme_get_field('works_description');
               ?>
               <li class="c-works__item u-fade-up js-fade">
                 <article class="c-works__card">
@@ -123,7 +123,7 @@
                     <span class="c-works__arrow"></span>
                     <figure class="c-works__img">
                       <?php if ($pc_img) : ?>
-                        <img src="<?php echo esc_url($pc_img['url']); ?>" alt="<?php echo esc_attr($pc_img['alt']); ?>" loading="lazy" width="413" height="239">
+                        <?php mytheme_works_card_image($pc_img); ?>
                       <?php endif; ?>
                     </figure>
                     <h3 class="c-works__title dm-mono"><?php echo esc_html(get_the_title()); ?></h3>

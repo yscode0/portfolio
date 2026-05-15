@@ -18,17 +18,17 @@
     <section class="p-work">
       <div class="l-inner">
         <?php if (have_posts()) : while (have_posts()) : the_post();
-          $works_url      = get_field('works_url');
-          $is_basic       = get_field('is_basic');
-          $works_role     = get_field('works_role');
-          $works_tech     = get_field('works_tech');
-          $works_function = get_field('works_function');
-          $works_duration = get_field('works_duration');
-          $works_overview = get_field('works_overview');
-          $works_points   = get_field('works_points');
-          $works_points_text  = get_field('works_points_text');
-          $pc_img         = get_field('works_pc_img');
-          $sp_img         = get_field('works_sp_img');
+          $works_url      = mytheme_get_field('works_url');
+          $is_basic       = mytheme_get_field('is_basic');
+          $works_role     = mytheme_get_field('works_role');
+          $works_tech     = mytheme_get_field('works_tech');
+          $works_function = mytheme_get_field('works_function');
+          $works_duration = mytheme_get_field('works_duration');
+          $works_overview = mytheme_get_field('works_overview');
+          $works_points   = mytheme_get_field('works_points');
+          $works_points_text  = mytheme_get_field('works_points_text');
+          $pc_img         = mytheme_get_field('works_pc_img');
+          $sp_img         = mytheme_get_field('works_sp_img');
         ?>
         <div class="p-work__content">
 
@@ -145,7 +145,7 @@
               </ul>
 
               <?php 
-              $works_points_text = get_field('works_points_text');
+              $works_points_text = mytheme_get_field('works_points_text');
               if ($works_points_text) : ?>
               <p class="c-text">
                 <?php echo nl2br(esc_html($works_points_text)); ?>

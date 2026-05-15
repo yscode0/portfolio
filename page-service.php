@@ -210,44 +210,52 @@
         </h2>
         <dl class="p-service__faq-list">
           <div class="p-service__faq-item u-fade-up js-fade">
-            <dt class="p-service__faq-q dm-mono js-accordion-trigger js-hover">
-              <span>デザインなしでも依頼できますか？</span>
-              <span class="p-service__faq-icon"></span>
+            <dt class="p-service__faq-q">
+              <button class="p-service__faq-button dm-mono js-accordion-trigger js-hover" type="button" aria-expanded="false" aria-controls="faq-answer-1">
+                <span>デザインなしでも依頼できますか？</span>
+                <span class="p-service__faq-icon" aria-hidden="true"></span>
+              </button>
             </dt>
-            <dd class="p-service__faq-a">
+            <dd class="p-service__faq-a" id="faq-answer-1">
               <p class="c-text">
                 基本的にはデザインカンプ（FigmaやXDなど）をご用意いただいた上でのコーディングが中心となります。デザインの用意が難しい場合はご相談ください。
               </p>
             </dd>
           </div>
           <div class="p-service__faq-item u-fade-up js-fade">
-            <dt class="p-service__faq-q dm-mono js-accordion-trigger js-hover">
-              <span>納期はどのくらいですか？</span>
-              <span class="p-service__faq-icon"></span>
+            <dt class="p-service__faq-q">
+              <button class="p-service__faq-button dm-mono js-accordion-trigger js-hover" type="button" aria-expanded="false" aria-controls="faq-answer-2">
+                <span>納期はどのくらいですか？</span>
+                <span class="p-service__faq-icon" aria-hidden="true"></span>
+              </button>
             </dt>
-            <dd class="p-service__faq-a">
+            <dd class="p-service__faq-a" id="faq-answer-2">
               <p class="c-text">
                 案件の規模や内容によって異なります。まずはお問い合わせいただき、ご要件をお聞かせください。可能な限りご希望の納期に沿えるよう対応いたします。
               </p>
             </dd>
           </div>
           <div class="p-service__faq-item u-fade-up js-fade">
-            <dt class="p-service__faq-q dm-mono js-accordion-trigger js-hover">
-              <span>修正対応はしてもらえますか？</span>
-              <span class="p-service__faq-icon"></span>
+            <dt class="p-service__faq-q">
+              <button class="p-service__faq-button dm-mono js-accordion-trigger js-hover" type="button" aria-expanded="false" aria-controls="faq-answer-3">
+                <span>修正対応はしてもらえますか？</span>
+                <span class="p-service__faq-icon" aria-hidden="true"></span>
+              </button>
             </dt>
-            <dd class="p-service__faq-a">
+            <dd class="p-service__faq-a" id="faq-answer-3">
               <p class="c-text">
                 納品前の修正は対応しております。納品後の追加修正については、内容に応じて別途ご相談させていただく場合があります。
               </p>
             </dd>
           </div>
           <div class="p-service__faq-item u-fade-up js-fade">
-            <dt class="p-service__faq-q dm-mono js-accordion-trigger js-hover">
-              <span>制作会社からのコーディング依頼は受けていますか？</span>
-              <span class="p-service__faq-icon"></span>
+            <dt class="p-service__faq-q">
+              <button class="p-service__faq-button dm-mono js-accordion-trigger js-hover" type="button" aria-expanded="false" aria-controls="faq-answer-4">
+                <span>制作会社からのコーディング依頼は受けていますか？</span>
+                <span class="p-service__faq-icon" aria-hidden="true"></span>
+              </button>
             </dt>
-            <dd class="p-service__faq-a">
+            <dd class="p-service__faq-a" id="faq-answer-4">
               <p class="c-text">
                 はい、制作会社様のコーディングパートナーとしての対応を歓迎しています。継続的なお取引も大歓迎ですので、お気軽にご相談ください。
               </p>

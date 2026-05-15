@@ -286,14 +286,22 @@
     }
   }
   &__faq-q {
+    margin: 0;
+  }
+  &__faq-button {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
     gap: 16px;
     padding: 28px 0;
+    border: 0;
+    background: transparent;
     font-size: 1rem;
     font-weight: 500;
     letter-spacing: .05em;
+    line-height: 1.5;
+    text-align: left;
     color: var(--text);
     cursor: pointer;
     transition: color 0.3s;
